@@ -3,7 +3,7 @@
 % check if second advisor exists
 \newcommand{\printsecondadvisor}[1]{%
   \ifcsname#1\endcsname%
-  \ifmmtlanguagegerman ZweitbetreuerIn: \else Second Advisor: \fi \secondadvisor 
+  \ifmmtlanguagegerman Zweitbetreuer*in: \else Second Advisor: \fi \secondadvisor 
   \else%
     
   \fi%
@@ -45,7 +45,7 @@
     
     \vspace*{1.5cm}
     {\large
-    \ifmmtlanguagegerman AutorIn: \else Author: \fi \authorname
+    \ifmmtlanguagegerman Autor*in: \else Author: \fi \authorname
     }
     \vfill
     
@@ -59,7 +59,7 @@
     
     \vspace*{1cm}
     
-    \ifmmtlanguagegerman BetreuerIn: \else Advisor: \fi
+    \ifmmtlanguagegerman Betreuer*in: \else Advisor: \fi
     \advisor
     \\    
     \printsecondadvisor{secondadvisor}
@@ -100,8 +100,8 @@
     \vfill
     
     %\begin{tabular}{ll}
-    \ifmmtlanguagegerman AutorIn: \else Author: \fi  \authorname  \\
-    \ifmmtlanguagegerman BetreuerIn: \else Advisor: \fi \advisor \\
+    \ifmmtlanguagegerman Autor*in: \else Author: \fi  \authorname  \\
+    \ifmmtlanguagegerman Betreuer*in: \else Advisor: \fi \advisor \\
     Repository: \thesisrepo \\
     \printsecondadvisor{secondadvisor}
     
