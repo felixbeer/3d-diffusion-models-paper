@@ -275,7 +275,8 @@
 \ifmmtlanguagegerman
     \newcommand{\selectthesislanguage}{\selectlanguage{ngerman}}  
 \else
-    \newcommand{\selectthesislanguage}{\selectlanguage{english}}  
+    \newcommand{\selectthesislanguage}{\selectlanguage{english}}
+    \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
 \fi
 
 \LoadClass{article}
