@@ -15,9 +15,11 @@
 *.ilg
 *.ind
 *.lof
+*.lol
 *.lot
 *.maf
 *.mtc
 *.mtc1
 *.out
 *.synctex.gz
+_minted-*

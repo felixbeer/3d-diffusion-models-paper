@@ -1,6 +1,6 @@
-% put environments that should be ignored by texcount here, e.g., here lstlisting for code
+% put environments that should be ignored by texcount here, e.g., here listing for code
 
-%TC:envir lstlisting [] ignore
+%TC:envir listing [] ignore
 
 %for reference to this section
 \section{Introduction}
@@ -19,6 +19,19 @@ Introduce why this specific related work is important for your own work. Which a
 Provide a high level overview of your system, approach, etc. 
 Describe features, user interfaces, provide screenshots.
 What does a user do with your application/system/interaction method?
+
+\begin{listing}[H]
+    \begin{csharpcode}
+    for (var item in myList)
+    {
+        Console.WriteLine($"Fancy syntax highlighting for {item}");
+    }
+    \end{csharpcode}
+    \caption{Example of a listing.}
+    \label{lst:example}
+\end{listing}
+
+See code \ref{lst:example} for high efficiency code.
 
 \section{Implementation}
 Provide implementation details such as the used software and our software architecture, highlight your own solutions to encountered difficulties. Describe relevant iterations of your implementation.
@@ -117,35 +130,20 @@ Summarize your work, outline limitations and future work.
 % %for references to this subsection
 % \label{subsection:Coding}
 
-% \begin{lstlisting}[
-% 	label=listing:Main, %for reference to this listing
-% 	float=h,
-% 	caption=main.cpp,
-% 	firstnumber=10
-% ]
-% int main(void) {
-% 	while (true) {
-% 	}
-% 	return 0;
-% }
-% \end{lstlisting}
+% \begin{listing}[H]
+%     \begin{csharpcode*}{firstnumber=10}
+%         while (true)
+%         {
+%             // Ignition
+%         }
+%     \end{csharpcode*}
 
-% Wie man in Listing \ref{listing:Main} in Zeile 10 sieht, kann man die Zeilennummern im Listing absichtlich setzen, hier z.B. auf 10. In Listing \ref{listing:closure} wurde davon nicht Gebrauch gemacht. In diesem Fall beginnt die Nummerierung bei 1.
+%     \caption{Example of another listing.}
+%     \label{lst:Main}
+% \end{listing}
 
-% \begin{lstlisting}[
-%     label=listing:closure,
-% 	float=h,
-% 	caption=Closure in Javascript,
-% 	language=JavaScript
-% ]
-% function foo(x,y) {
-%     let i = x;
-%     return function(a) {
-%         return i * 2;
-%     }
-% }
-% \end{lstlisting}
-
+% Wie man in Listing \ref{lst:Main}, kann man die erste Zeilennummern im Listing absichtlich ändern, hier z.B. auf 10. Beachte, dass man hier chsarpcode* als Umgebung nutzt, um neben
+% den Default-Settings zusätzliche Einstellungen zu tätigen.
 
 % \subsubsection{Unterunterabschnitt i}
 
