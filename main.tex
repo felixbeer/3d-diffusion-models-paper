@@ -13,7 +13,7 @@
 \usepackage{subfig}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
-\usepackage{listings}
+\usepackage[newfloat,langlinenos]{minted}
 \usepackage{makecell}
 \usepackage[toc,page]{appendix}
 \usepackage{hyperref}
@@ -64,40 +64,17 @@
 \makeatother
 %%
 
+%% ADD HERE YOUR CUSTOM CODE ENVIRONMENT AND SET DEFAULT VALUES %%
+%% See https://mirror.kumi.systems/ctan/macros/latex/contrib/minted/minted.pdf
+%% for
+\newminted{csharp}{linenos,autogobble,fontsize=\footnotesize}
+% \newminted{cpp}{linenos,autogobble,fontsize=\footnotesize}
+%% Use it then with \begin{csharpcode} \end{csharpcode} or \begin{cppcode} \end{cppcode}
+
 \usepackage{color}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
-\lstdefinelanguage{JavaScript}{
-  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, let, const, void, while, with},
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
-  morestring=[b]",
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  sensitive=true
-}
-
-\lstset{
-   language=JavaScript,
-   backgroundcolor=\color{lightgray},
-   extendedchars=true,
-   basicstyle=\footnotesize\ttfamily,
-   showstringspaces=false,
-   showspaces=false,
-   numbers=left,
-   numberstyle=\footnotesize,
-   numbersep=9pt,
-   tabsize=2,
-   breaklines=true,
-   showtabs=false,
-   captionpos=b
-}
 
 \usepackage[url=false,authordate,bibencoding=auto,strict,noibid,backend=biber]{biblatex-chicago}
 \bibliography{bibliography}
@@ -204,7 +181,7 @@
     
     \newpage
     \listoffigures
-    \lstlistoflistings
+    \listoflistings
     \listoftables
     \input{abbreviations}
     
