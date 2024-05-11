@@ -3,7 +3,7 @@
 % use \selectthesislanguage in body.tex to switch to default language
 
 %\documentclass[ngerman, paper]{mmt} % use for seminar paper
-%\documentclass[ngerman, reviewversion]{mmt} % use for anonymized review version 
+%\documentclass[ngerman, reviewversion]{mmt} % use for anonymized review version
 %\documentclass[ngerman, bachelorthesis]{mmt} % use for Bachelor thesis
 \documentclass[english, paper]{mmt} % use for Master thesis
 
@@ -78,7 +78,6 @@
 
 \usepackage[url=false,authordate,bibencoding=auto,strict,noibid,backend=biber]{biblatex-chicago}
 \bibliography{bibliography}
-
 %% Add configuration options
 \include{_configuration}
 
@@ -88,8 +87,8 @@
 
 %% This is how authors are specified in the conference style
 
-%% Author 
-\author{ \authorname\\ \scriptsize \authormail \\ \scriptsize 
+%% Author
+\author{ \authorname\\ \scriptsize \authormail \\ \scriptsize
 \ifmmtlanguagegerman FH Salzburg \else Salzburg University of Applied Sciences \fi
 }
 
@@ -102,10 +101,10 @@
 
 %% Abstract section for paper format.
 \abstract{
-    \ifmmtlanguagegerman 
+    \ifmmtlanguagegerman
         \selectlanguage{ngerman}
         \input{kurzfassung}
-    \else 
+    \else
         \selectlanguage{english}
         \input{abstract}
     \fi
@@ -123,9 +122,9 @@
 
  % group open
 \ifmmtpaper
-    \begingroup 
+    \begingroup
     % is required because paper template messes with sizes
-    \fontsize{12}{18}\selectfont        
+    \fontsize{12}{18}\selectfont
     \setlength{\parindent}{0pt}
     \setlength{\parskip}{5pt plus 2pt minus 1pt}
     \sectionfont{\fontsize{14}{15}\selectfont}
@@ -134,13 +133,13 @@
 \ifmmtreviewversion
     \titlename
 \else
-    \input{title}       
+    \input{title}
 \fi
 
-    \onecolumn           
-    
+    \onecolumn
+
     \pagenumbering{roman}
-    
+
 \ifmmtpaper % does not need affidavit
 \else \ifmmtreviewversion
       \else
@@ -155,14 +154,14 @@
 
 
 \ifmmtpaper \else  % paper does not need this stuff
-    
+
     \newpage
     \selectlanguage{ngerman}
     \section*{Kurzfassung}
     \input{kurzfassung}
     \ifmmtmasterthesis
-    
-    \vspace*{0.5cm} 
+
+    \vspace*{0.5cm}
     \textbf{Schlüsselwörter:~} \keywordsgerman
     \fi
     \newpage
@@ -170,21 +169,21 @@
     \section*{Abstract}
     \input{abstract}
     \ifmmtmasterthesis
-        
-    \vspace*{0.5cm} 
+
+    \vspace*{0.5cm}
     \textbf{Keywords:~} \keywordsenglish
     \fi
     \selectthesislanguage
-    
+
     \newpage
     \tableofcontents
-    
+
     \newpage
     \listoffigures
     \listoflistings
     \listoftables
     \input{abbreviations}
-    
+
 \fi
 
 
@@ -215,10 +214,10 @@
 
 
  % group open
-\ifmmtpaper 
-\begingroup 
+\ifmmtpaper
+\begingroup
     % is required because paper template messes with sizes
-    \fontsize{12}{18}\selectfont        
+    \fontsize{12}{18}\selectfont
     \setlength{\parindent}{0pt}
     \setlength{\parskip}{5pt plus 2pt minus 1pt}
     \sectionfont{\fontsize{14}{15}\selectfont}
@@ -235,7 +234,7 @@
 % group closing
 \newpage
 
-This work has the following word count (counted by texcount): 
+This work has the following word count (counted by texcount):
 %TC:ignore
 \detailtexcount{body}
 %TC:endignore
