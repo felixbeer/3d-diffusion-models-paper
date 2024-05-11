@@ -23,3 +23,10 @@
 *.out
 *.synctex.gz
 _minted-*
+
+# specific build files
+*.bcf
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.wcdetail
