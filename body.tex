@@ -5,16 +5,13 @@
 %for reference to this section
 \section{Introduction}
 \label{section:Introduction}
+In today's world, nearly every industry uses 3D models to visually represent objects or environments. Whether for entertainment, development, or research, 3D models are essential tools for understanding complex concepts and ideas.
 
-The field of Generative 3D AI is constantly improving, and the potential for future advancements is vast. One very promising direction is the generation of 3D models from single 2D images. This particular process is called 3D mesh reconstruction and could revolutionize asset creation in many fields as it improves.
-Some examples include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) or the more established Zero-1-to-3 (\textcite{liu_zero-1--3_2023}).
+Creating these models is a time-consuming and costly process that requires skilled artists and designers, especially when compared to taking pictures or recording videos with cameras or smartphones. However, recent advancements in Generative 3D AI have made it possible to generate 3D models from a single image. This process, known as 3D object- or mesh-reconstruction, has the potential to transform and partially automate the creation and use of 3D models.
 
-This paper explores the historical evolution of this rapidly evolving field as well as its ethical implications and general applications.
-Beginning with an overview of the historical development of these techniques, ranging from early methodologies to modern advancements, covering significant milestones that have shaped the entire subject.
-Including a deeper look into the inner workings of some models, like the underlying methods for generating and predicting radiance fields for the reconstruction. Furthermore, a small peek at 3D-model datasets like Objaverse-XL (\textcite{deitke_objaverse-xl_2023}) and how they have influenced model training.
+Some examples include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}), One-2-3-45 (\textcite{liu_one-2-3-45_2023}), and One-2-3-45++ (\textcite{liu_one-2-3-45_2023-1}).
 
-The examination of the applications of 3D mesh reconstruction across diverse domains, including development and entertainment, highlights the potential for innovation and advancement. However, it also raises crucial ethical concerns. Privacy considerations, issues of representation and cultural sensitivity, as well as the implications of estimations and hallucinations, highlight the complex ethical landscape surrounding these technologies.
-
+This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance and visual results. It also explores the underlying methods for generating and predicting radiance fields (\textcite{mildenhall_nerf_2021}) used in some models. Furthermore, it offers a brief look at 3D-model datasets such as Objaverse-XL (\textcite{deitke_objaverse-xl_2023}) and their impact on model training.
 % \section{System Overview}
 % Provide a high level overview of your system, approach, etc.
 % Describe features, user interfaces, provide screenshots.
@@ -33,7 +30,38 @@ The examination of the applications of 3D mesh reconstruction across diverse dom
 
 % See code \ref{lst:example} for high efficiency code.
 
-\section{Historical Evolution}
+\section{Concepts and Functionality}
+
+\subsection{Shape from Shading}
+Shape from shading is the most basic technique used to estimate the shape of an object from a single image, which dates back to the late 80s (\textcite{horn_shape_1989}).
+The basic idea is to use the shading information in the image to infer the 3D structure of the object. This is done by assuming that the object gets illuminated by a single light source and that the surface of the object is Lambertian, meaning that the surface reflects light uniformly in all directions. This by itself is a strong assumption, as most real-world objects are not perfectly Lambertian.
+Estimating surface normals at each point on the object involves using the intensity of the reflected light and then integrating the normals to estimate the object's depth. This technique was one of the first to show that basic 3D shape information could be recovered from a single image and has since inspired many other techniques for 3D reconstruction.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/shape_from_shading.jpg}
+    \caption{Shape from shading \autocite{horn_shape_1989}}
+    \label{fig:shape_from_shading}
+\end{figure}
+
+\subsection{Multi-view Stereo}
+\textcite{furukawa_accurate_2010}
+
+\subsection{Convolutional Neural Networks}
+\textcite{krizhevsky_imagenet_2012}
+
+\subsection{Voxel-based Approaches}
+\textcite{zhirong_wu_3d_2015}
+
+\subsection{Point Cloud-based Approaches}
+\textcite{charles_pointnet_2017}
+\subsection{Mesh-based Approaches}
+\textcite{wang_pixel2mesh_2018}
+\subsection{Neural Implicit Functions}
+
+\textcite{park_deepsdf_2019}
+\textcite{mildenhall_nerf_2021}
+
+\section{Models}
 
 
 \subsection{Models}
@@ -68,22 +96,22 @@ This could be especially beneficial for indie developers or small studios that d
 
 \subsubsection{Cultural Heritage}
 
-\section{Ethical Implications}
-Even though all the advancements in the field of 3D mesh reconstruction are promising, they also raise quite a few concerns.
+% \section{Ethical Implications}
+% Even though all the advancements in the field of 3D mesh reconstruction are promising, they also raise quite a few concerns.
 
-\subsection{Environmental Impact}
-Estimations of energy consumption for training as well as execution of models.
+% \subsection{Environmental Impact}
+% Estimations of energy consumption for training as well as execution of models.
 
-\subsection{Training Data}
-The sources of training data. Looking at datasets like Objaverse-XL \autocite{deitke_objaverse-xl_2023} and their sources.
+% \subsection{Training Data}
+% The sources of training data. Looking at datasets like Objaverse-XL \autocite{deitke_objaverse-xl_2023} and their sources.
 
-\subsection{Privacy Concerns}
+% \subsection{Privacy Concerns}
 
-\subsection{Cultural Sensitivity}
-It is important that the models are actually representative of the cultures, especially when generating models of people or culturally significant objects.
+% \subsection{Cultural Sensitivity}
+% It is important that the models are actually representative of the cultures, especially when generating models of people or culturally significant objects.
 
-\subsection{Implications of Estimations and Hallucinations}
-It is usually necessary for these models to estimate not seeable parts of the object. This can lead to hallucinations and other artifacts in the generated models.
+% \subsection{Implications of Estimations and Hallucinations}
+% It is usually necessary for these models to estimate not seeable parts of the object. This can lead to hallucinations and other artifacts in the generated models.
 
 % \section{Implementation}
 % Provide implementation details such as the used software and our software architecture, highlight your own solutions to encountered difficulties. Describe relevant iterations of your implementation.

@@ -94,23 +94,6 @@
   file       = {Full Text PDF:/Users/felix/Zotero/storage/8NNXIDZF/Liu et al. - 2023 - Zero-1-to-3 Zero-shot One Image to 3D Object.pdf:application/pdf}
 }
 
-@misc{mildenhall_nerf_2020,
-  title      = {{NeRF}: {Representing} {Scenes} as {Neural} {Radiance} {Fields} for {View} {Synthesis}},
-  shorttitle = {{NeRF}},
-  url        = {http://arxiv.org/abs/2003.08934},
-  doi        = {10.48550/arXiv.2003.08934},
-  abstract   = {We present a method that achieves state-of-the-art results for synthesizing novel views of complex scenes by optimizing an underlying continuous volumetric scene function using a sparse set of input views. Our algorithm represents a scene using a fully-connected (non-convolutional) deep network, whose input is a single continuous 5D coordinate (spatial location \$(x,y,z)\$ and viewing direction \$({\textbackslash}theta, {\textbackslash}phi)\$) and whose output is the volume density and view-dependent emitted radiance at that spatial location. We synthesize views by querying 5D coordinates along camera rays and use classic volume rendering techniques to project the output colors and densities into an image. Because volume rendering is naturally differentiable, the only input required to optimize our representation is a set of images with known camera poses. We describe how to effectively optimize neural radiance fields to render photorealistic novel views of scenes with complicated geometry and appearance, and demonstrate results that outperform prior work on neural rendering and view synthesis. View synthesis results are best viewed as videos, so we urge readers to view our supplementary video for convincing comparisons.},
-  urldate    = {2024-03-31},
-  publisher  = {arXiv},
-  author     = {Mildenhall, Ben and Srinivasan, Pratul P. and Tancik, Matthew and Barron, Jonathan T. and Ramamoorthi, Ravi and Ng, Ren},
-  month      = aug,
-  year       = {2020},
-  note       = {arXiv:2003.08934 [cs]},
-  keywords   = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Graphics},
-  annote     = {Comment: ECCV 2020 (oral). Project page with videos and code: http://tancik.com/nerf},
-  file       = {arXiv Fulltext PDF:/Users/felix/Zotero/storage/889T5R9Y/Mildenhall et al. - 2020 - NeRF Representing Scenes as Neural Radiance Field.pdf:application/pdf;arXiv.org Snapshot:/Users/felix/Zotero/storage/ETR99UY3/2003.html:text/html}
-}
-
 @misc{poole_dreamfusion_2022,
   title      = {{DreamFusion}: {Text}-to-{3D} using {2D} {Diffusion}},
   shorttitle = {{DreamFusion}},
@@ -226,4 +209,157 @@
   year    = {2019},
   pages   = {9964--9973},
   file    = {Full Text PDF:/Users/felix/Zotero/storage/5U2EDZ3D/Pan et al. - 2019 - Deep Mesh Reconstruction From Single RGB Images vi.pdf:application/pdf}
+}
+
+@book{horn_shape_1989,
+  title     = {Shape from {Shading}},
+  volume    = {2},
+  abstract  = {The image of the world projected onto the retina is essentially two-dimensional. From this image we recover information about the shapes of objects in a three-dimensional world. How is this done?
+               
+               The answer lies in part in the variation of brightness, or shading, often exhibited in a region of an image. In a photograph of a face, for example, there are variations in brightness, even though the reflecting properties of the skin presumably do not vary much from place to place. It may be concluded that shading effects arise primarily because some parts of a surface are oriented so as to reflect more of the incident light toward the viewer than are others.
+               
+               It should be pointed out right away that the recovery of shape from shading is by no means trivial. We cannot simply associate a given image brightness with a particular surface orientation. The problem is that there are two degrees of freedom to surface orientation - it takes two numbers to specify the direction of a unit vector perpendicular to the surface. Since we have only one brightness measurement at each picture cell, we have one equation in two unknowns at every point in the image. Additional constraint must therefore be brought to bear. One way to provide the needed constraint is to assume that the surface is continuous and smooth, so that the surface orientations of neighboring surface patches are not independent.
+               
+               Note that there is no magic at work here: we are not recovering a function of three variables given only a function of two variables. The distribution of some absorbing material in three-dimensional space cannot be recovered from a single two-dimensional projection. The techniques of tomographic reconstruction can be applied to that problem, but only if a large number of images taken from many different viewpoints are available. Why then are we able to learn so much about the three-dimensional world from merely two-dimensional images?},
+  publisher = {MIT Press},
+  author    = {Horn, Berthold and Brooks, Michael},
+  month     = jan,
+  year      = {1989},
+  file      = {Full Text PDF:/Users/felix/Zotero/storage/SWMEEDE8/Horn and Brooks - 1989 - Shape from Shading.pdf:application/pdf}
+}
+
+@inproceedings{seitz_comparison_2006,
+  address   = {New York, NY, USA},
+  title     = {A {Comparison} and {Evaluation} of {Multi}-{View} {Stereo} {Reconstruction} {Algorithms}},
+  volume    = {1},
+  isbn      = {978-0-7695-2597-6},
+  url       = {http://ieeexplore.ieee.org/document/1640800/},
+  doi       = {10.1109/CVPR.2006.19},
+  abstract  = {This paper presents a quantitative comparison of several multi-view stereo reconstruction algorithms. Until now, the lack of suitable calibrated multi-view image datasets with known ground truth (3D shape models) has prevented such direct comparisons. In this paper, we ﬁrst survey multi-view stereo algorithms and compare them qualitatively using a taxonomy that differentiates their key properties. We then describe our process for acquiring and calibrating multiview image datasets with high-accuracy ground truth and introduce our evaluation methodology. Finally, we present the results of our quantitative comparison of state-of-the-art multi-view stereo reconstruction algorithms on six benchmark datasets. The datasets, evaluation details, and instructions for submitting new models are available online at http://vision.middlebury.edu/mview.},
+  language  = {en},
+  urldate   = {2024-05-31},
+  booktitle = {2006 {IEEE} {Computer} {Society} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} - {Volume} 1 ({CVPR}'06)},
+  publisher = {IEEE},
+  author    = {Seitz, S.M. and Curless, B. and Diebel, J. and Scharstein, D. and Szeliski, R.},
+  year      = {2006},
+  pages     = {519--528},
+  file      = {Seitz et al. - 2006 - A Comparison and Evaluation of Multi-View Stereo R.pdf:/Users/felix/Zotero/storage/D8R3B2JM/Seitz et al. - 2006 - A Comparison and Evaluation of Multi-View Stereo R.pdf:application/pdf}
+}
+
+@article{furukawa_accurate_2010,
+  title     = {Accurate, {Dense}, and {Robust} {Multiview} {Stereopsis}},
+  volume    = {32},
+  copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+  issn      = {0162-8828},
+  url       = {http://ieeexplore.ieee.org/document/5226635/},
+  doi       = {10.1109/TPAMI.2009.161},
+  abstract  = {This paper proposes a novel algorithm for multiview stereopsis that outputs a dense set of small rectangular patches covering the surfaces visible in the images. Stereopsis is implemented as a match, expand, and filter procedure, starting from a sparse set of matched keypoints, and repeatedly expanding these before using visibility constraints to filter away false matches. The keys to the performance of the proposed algorithm are effective techniques for enforcing local photometric consistency and global visibility constraints. Simple but effective methods are also proposed to turn the resulting patch model into a mesh which can be further refined by an algorithm that enforces both photometric consistency and regularization constraints. The proposed approach automatically detects and discards outliers and obstacles and does not require any initialization in the form of a visual hull, a bounding box, or valid depth ranges. We have tested our algorithm on various data sets including objects with fine surface details, deep concavities, and thin structures, outdoor scenes observed from a restricted set of viewpoints, and “crowded” scenes where moving obstacles appear in front of a static structure of interest. A quantitative evaluation on the Middlebury benchmark [1] shows that the proposed method outperforms all others submitted so far for four out of the six data sets.},
+  language  = {en},
+  number    = {8},
+  urldate   = {2024-05-31},
+  journal   = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  author    = {Furukawa, Yasutaka and Ponce, Jean},
+  month     = aug,
+  year      = {2010},
+  pages     = {1362--1376},
+  file      = {Furukawa and Ponce - 2010 - Accurate, Dense, and Robust Multiview Stereopsis.pdf:/Users/felix/Zotero/storage/GWHI5VUW/Furukawa and Ponce - 2010 - Accurate, Dense, and Robust Multiview Stereopsis.pdf:application/pdf}
+}
+
+@inproceedings{krizhevsky_imagenet_2012,
+  title     = {{ImageNet} {Classification} with {Deep} {Convolutional} {Neural} {Networks}},
+  volume    = {25},
+  url       = {https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html},
+  abstract  = {We trained a large, deep convolutional neural network to classify the 1.3 million high-resolution images in the LSVRC-2010 ImageNet training set into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 39.7{\textbackslash}\% and 18.9{\textbackslash}\% which is considerably better than the previous state-of-the-art results. The neural network, which has 60 million parameters and 500,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and two globally connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of convolutional nets. To reduce overfitting in the globally connected layers we employed a new regularization method that proved to be very effective.},
+  urldate   = {2024-05-31},
+  booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+  publisher = {Curran Associates, Inc.},
+  author    = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  year      = {2012},
+  file      = {Full Text PDF:/Users/felix/Zotero/storage/C9LGY9DE/Krizhevsky et al. - 2012 - ImageNet Classification with Deep Convolutional Ne.pdf:application/pdf}
+}
+
+@inproceedings{zhirong_wu_3d_2015,
+  address    = {Boston, MA, USA},
+  title      = {{3D} {ShapeNets}: {A} deep representation for volumetric shapes},
+  isbn       = {978-1-4673-6964-0},
+  shorttitle = {{3D} {ShapeNets}},
+  url        = {https://ieeexplore.ieee.org/document/7298801/},
+  doi        = {10.1109/CVPR.2015.7298801},
+  language   = {en},
+  urldate    = {2024-05-31},
+  booktitle  = {2015 {IEEE} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+  publisher  = {IEEE},
+  author     = {{Zhirong Wu} and Song, Shuran and Khosla, Aditya and {Fisher Yu} and {Linguang Zhang} and {Xiaoou Tang} and Xiao, Jianxiong},
+  month      = jun,
+  year       = {2015},
+  pages      = {1912--1920},
+  file       = {Zhirong Wu et al. - 2015 - 3D ShapeNets A deep representation for volumetric.pdf:/Users/felix/Zotero/storage/QMFIM3UQ/Zhirong Wu et al. - 2015 - 3D ShapeNets A deep representation for volumetric.pdf:application/pdf}
+}
+
+@inproceedings{charles_pointnet_2017,
+  address    = {Honolulu, HI},
+  title      = {{PointNet}: {Deep} {Learning} on {Point} {Sets} for {3D} {Classification} and {Segmentation}},
+  isbn       = {978-1-5386-0457-1},
+  shorttitle = {{PointNet}},
+  url        = {http://ieeexplore.ieee.org/document/8099499/},
+  doi        = {10.1109/CVPR.2017.16},
+  abstract   = {Point cloud is an important type of geometric data structure. Due to its irregular format, most researchers transform such data to regular 3D voxel grids or collections of images. This, however, renders data unnecessarily voluminous and causes issues. In this paper, we design a novel type of neural network that directly consumes point clouds, which well respects the permutation invariance of points in the input. Our network, named PointNet, provides a uniﬁed architecture for applications ranging from object classiﬁcation, part segmentation, to scene semantic parsing. Though simple, PointNet is highly efﬁcient and effective. Empirically, it shows strong performance on par or even better than state of the art. Theoretically, we provide analysis towards understanding of what the network has learnt and why the network is robust with respect to input perturbation and corruption.},
+  language   = {en},
+  urldate    = {2024-05-31},
+  booktitle  = {2017 {IEEE} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+  publisher  = {IEEE},
+  author     = {Charles, R. Qi and Su, Hao and Kaichun, Mo and Guibas, Leonidas J.},
+  month      = jul,
+  year       = {2017},
+  pages      = {77--85},
+  file       = {Charles et al. - 2017 - PointNet Deep Learning on Point Sets for 3D Class.pdf:/Users/felix/Zotero/storage/SU76WMYE/Charles et al. - 2017 - PointNet Deep Learning on Point Sets for 3D Class.pdf:application/pdf}
+}
+
+@inproceedings{wang_pixel2mesh_2018,
+  title      = {{Pixel2Mesh}: {Generating} {3D} {Mesh} {Models} from {Single} {RGB} {Images}},
+  shorttitle = {{Pixel2Mesh}},
+  url        = {https://openaccess.thecvf.com/content_ECCV_2018/html/Nanyang_Wang_Pixel2Mesh_Generating_3D_ECCV_2018_paper.html},
+  urldate    = {2024-06-01},
+  author     = {Wang, Nanyang and Zhang, Yinda and Li, Zhuwen and Fu, Yanwei and Liu, Wei and Jiang, Yu-Gang},
+  year       = {2018},
+  pages      = {52--67},
+  file       = {Full Text PDF:/Users/felix/Zotero/storage/67WU2XJM/Wang et al. - 2018 - Pixel2Mesh Generating 3D Mesh Models from Single .pdf:application/pdf}
+}
+
+@inproceedings{park_deepsdf_2019,
+  address    = {Long Beach, CA, USA},
+  title      = {{DeepSDF}: {Learning} {Continuous} {Signed} {Distance} {Functions} for {Shape} {Representation}},
+  copyright  = {https://doi.org/10.15223/policy-029},
+  isbn       = {978-1-72813-293-8},
+  shorttitle = {{DeepSDF}},
+  url        = {https://ieeexplore.ieee.org/document/8954065/},
+  doi        = {10.1109/CVPR.2019.00025},
+  abstract   = {Computer graphics, 3D computer vision and robotics communities have produced multiple approaches to representing 3D geometry for rendering and reconstruction. These provide trade-offs across ﬁdelity, efﬁciency and compression capabilities. In this work, we introduce DeepSDF, a learned continuous Signed Distance Function (SDF) representation of a class of shapes that enables high quality shape representation, interpolation and completion from partial and noisy 3D input data. DeepSDF, like its classical counterpart, represents a shape’s surface by a continuous volumetric ﬁeld: the magnitude of a point in the ﬁeld represents the distance to the surface boundary and the sign indicates whether the region is inside (-) or outside (+) of the shape, hence our representation implicitly encodes a shape’s boundary as the zero-level-set of the learned function while explicitly representing the classiﬁcation of space as being part of the shapes’ interior or not. While classical SDF’s both in analytical or discretized voxel form typically represent the surface of a single shape, DeepSDF can represent an entire class of shapes. Furthermore, we show stateof-the-art performance for learned 3D shape representation and completion while reducing the model size by an order of magnitude compared with previous work.},
+  language   = {en},
+  urldate    = {2024-06-01},
+  booktitle  = {2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})},
+  publisher  = {IEEE},
+  author     = {Park, Jeong Joon and Florence, Peter and Straub, Julian and Newcombe, Richard and Lovegrove, Steven},
+  month      = jun,
+  year       = {2019},
+  pages      = {165--174},
+  file       = {Park et al. - 2019 - DeepSDF Learning Continuous Signed Distance Funct.pdf:/Users/felix/Zotero/storage/JERQCY7Q/Park et al. - 2019 - DeepSDF Learning Continuous Signed Distance Funct.pdf:application/pdf}
+}
+
+@article{mildenhall_nerf_2021,
+  title      = {{NeRF}: representing scenes as neural radiance fields for view synthesis},
+  volume     = {65},
+  issn       = {0001-0782},
+  shorttitle = {{NeRF}},
+  url        = {https://dl.acm.org/doi/10.1145/3503250},
+  doi        = {10.1145/3503250},
+  abstract   = {We present a method that achieves state-of-the-art results for synthesizing novel views of complex scenes by optimizing an underlying continuous volumetric scene function using a sparse set of input views. Our algorithm represents a scene using a fully connected (nonconvolutional) deep network, whose input is a single continuous 5D coordinate (spatial location (x, y, z) and viewing direction (θ, ϕ)) and whose output is the volume density and view-dependent emitted radiance at that spatial location. We synthesize views by querying 5D coordinates along camera rays and use classic volume rendering techniques to project the output colors and densities into an image. Because volume rendering is naturally differentiable, the only input required to optimize our representation is a set of images with known camera poses. We describe how to effectively optimize neural radiance fields to render photorealistic novel views of scenes with complicated geometry and appearance, and demonstrate results that outperform prior work on neural rendering and view synthesis.},
+  number     = {1},
+  urldate    = {2024-06-01},
+  journal    = {Communications of the ACM},
+  author     = {Mildenhall, Ben and Srinivasan, Pratul P. and Tancik, Matthew and Barron, Jonathan T. and Ramamoorthi, Ravi and Ng, Ren},
+  month      = dec,
+  year       = {2021},
+  pages      = {99--106},
+  file       = {Full Text PDF:/Users/felix/Zotero/storage/5PAZVEGR/Mildenhall et al. - 2021 - NeRF representing scenes as neural radiance field.pdf:application/pdf}
 }
