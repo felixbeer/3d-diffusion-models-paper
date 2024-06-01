@@ -11,7 +11,10 @@ Creating these models is a time-consuming and costly process that requires skill
 
 Some examples include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}), One-2-3-45 (\textcite{liu_one-2-3-45_2023}), and One-2-3-45++ (\textcite{liu_one-2-3-45_2023-1}).
 
-This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance and visual results. It also explores the underlying methods for generating and predicting radiance fields (\textcite{mildenhall_nerf_2021}) used in some models. Furthermore, it offers a brief look at 3D-model datasets such as Objaverse-XL (\textcite{deitke_objaverse-xl_2023}) and their impact on model training.
+This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance and visual results.
+Furthermore, it discusses the different strategies like voxel-based \autocite{zhirong_wu_3d_2015}, point cloud-based \autocite{charles_pointnet_2017}, and mesh-based \autocite{wang_pixel2mesh_2018} methods.
+It also explores the underlying methods and concepts like convolutional neural networks and neural radiance fields \autocite{mildenhall_nerf_2021} used in modern neural network-based models.
+Finally, it offers a brief look at use cases and applications that benefit the most as well as 3D-model datasets such as Objaverse-XL \autocite{deitke_objaverse-xl_2023} and their impact on model training.
 % \section{System Overview}
 % Provide a high level overview of your system, approach, etc.
 % Describe features, user interfaces, provide screenshots.
@@ -31,9 +34,9 @@ This paper provides an overview of the various approaches and models used for 3D
 % See code \ref{lst:example} for high efficiency code.
 
 \section{Concepts and Functionality}
-
+To understand the process of 3D mesh reconstruction, it is essential to understand the underlying concepts and techniques used in the field. This section provides a quick overview of the different methods and approaches used to generate 3D models from 2D images.
 \subsection{Shape from Shading}
-Shape from shading is the most basic technique used to estimate the shape of an object from a single image, which dates back to the late 80s (\textcite{horn_shape_1989}).
+Starting with shape from shading, this is the most basic technique used to estimate the shape of an object from a single image, which dates back to the late 80s (\textcite{horn_shape_1989}).
 The basic idea is to use the shading information in the image to infer the 3D structure of the object. This is done by assuming that the object gets illuminated by a single light source and that the surface of the object is Lambertian, meaning that the surface reflects light uniformly in all directions. This by itself is a strong assumption, as most real-world objects are not perfectly Lambertian.
 Estimating surface normals at each point on the object involves using the intensity of the reflected light and then integrating the normals to estimate the object's depth. This technique was one of the first to show that basic 3D shape information could be recovered from a single image and has since inspired many other techniques for 3D reconstruction.
 \begin{figure}
@@ -44,9 +47,15 @@ Estimating surface normals at each point on the object involves using the intens
 \end{figure}
 
 \subsection{Multi-view Stereo}
+Before the appearance of deep learning, multi-view stereo was the most common technique used for 3D reconstruction.
+The basic idea is to use multiple images of an object taken from different angles to estimate the 3D structure of the object.
+This is done by first estimating the camera parameters for each image and then using these parameters to triangulate the 3D points in the scene.
 \textcite{furukawa_accurate_2010}
 
 \subsection{Convolutional Neural Networks}
+Convolutional Neural Networks (CNNs) have empowered the field of computer vision and have found applications in many areas, including 3D mesh reconstruction.
+CNNs are a type of deep learning model that are especially good at working with image data. They are designed to automatically and adaptively learn spatial hierarchies of features from the data.
+A very popular CNN architecture is the AlexNet \autocite{krizhevsky_imagenet_2012}.
 \textcite{krizhevsky_imagenet_2012}
 
 \subsection{Voxel-based Approaches}
