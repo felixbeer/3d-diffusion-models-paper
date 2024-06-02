@@ -1,0 +1,1166 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{cms/global//global/global}
+    \entry{charles_pointnet_2017}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1d86e06a45d853e7174169eac7e2b053}{%
+           family={Charles},
+           familyi={C\bibinitperiod},
+           given={R.\bibnamedelimi Qi},
+           giveni={R\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18c26ddba8b9dd77f278213fd4e93ce4}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f8fadb82f6dfc29abd8e0b3a07830452}{%
+           family={Kaichun},
+           familyi={K\bibinitperiod},
+           given={Mo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03578abbf51650fbfaf563c532898f30}{%
+           family={Guibas},
+           familyi={G\bibinitperiod},
+           given={Leonidas\bibnamedelima J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Honolulu, HI}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{05e6288167dc5d92081d7b43ed4221f4}
+      \strng{fullhash}{9de01586add91ce1c79df5ac73fcf516}
+      \strng{bibnamehash}{9de01586add91ce1c79df5ac73fcf516}
+      \strng{authorbibnamehash}{9de01586add91ce1c79df5ac73fcf516}
+      \strng{authornamehash}{05e6288167dc5d92081d7b43ed4221f4}
+      \strng{authorfullhash}{9de01586add91ce1c79df5ac73fcf516}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Point cloud is an important type of geometric data structure. Due to its irregular format, most researchers transform such data to regular 3D voxel grids or collections of images. This, however, renders data unnecessarily voluminous and causes issues. In this paper, we design a novel type of neural network that directly consumes point clouds, which well respects the permutation invariance of points in the input. Our network, named PointNet, provides a uniﬁed architecture for applications ranging from object classiﬁcation, part segmentation, to scene semantic parsing. Though simple, PointNet is highly efﬁcient and effective. Empirically, it shows strong performance on par or even better than state of the art. Theoretically, we provide analysis towards understanding of what the network has learnt and why the network is robust with respect to input perturbation and corruption.}
+      \field{booktitle}{2017 {IEEE} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}
+      \field{isbn}{978-1-5386-0457-1}
+      \field{month}{7}
+      \field{shorttitle}{{PointNet}}
+      \field{title}{{PointNet}: {Deep} {Learning} on {Point} {Sets} for {3D} {Classification} and {Segmentation}}
+      \field{urlday}{31}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \field{pages}{77\bibrangedash 85}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/CVPR.2017.16
+      \endverb
+      \verb{file}
+      \verb Charles et al. - 2017 - PointNet Deep Learning on Point Sets for 3D Class.pdf:/Users/felix/Zotero/storage/SU76WMYE/Charles et al. - 2017 - PointNet Deep Learning on Point Sets for 3D Class.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/8099499/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/8099499/
+      \endverb
+    \endentry
+    \entry{deitke_objaverse-xl_2023}{inproceedings}{}
+      \name{author}{17}{}{%
+        {{un=0,uniquepart=base,hash=c50132b7128108a2bed8f0fe2d091e0a}{%
+           family={Deitke},
+           familyi={D\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eaeafee5039d75d6f79b94ef3c586460}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ruoshi},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=537e8a08ff9779d69be45e76f3af8f24}{%
+           family={Wallingford},
+           familyi={W\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38709fc8035cd38816f16e56ccec6dba}{%
+           family={Ngo},
+           familyi={N\bibinitperiod},
+           given={Huong},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0760789e0761f2667443d92c3de28018}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2fbf6e07828163ad25bdae616f7015ed}{%
+           family={Kusupati},
+           familyi={K\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a612045bc778ef7cb95f03f602e5ee0f}{%
+           family={Fan},
+           familyi={F\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b83a18c1b0e87da620fb1bb8301cf5e9}{%
+           family={Laforte},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91a7e601d3c2748605fc149072676547}{%
+           family={Voleti},
+           familyi={V\bibinitperiod},
+           given={Vikram},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afdbcaa18d3bab978dcc96bfb9ff91f8}{%
+           family={Gadre},
+           familyi={G\bibinitperiod},
+           given={Samir\bibnamedelima Yitzhak},
+           giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84de95159043aac90c146b4b8a2b5bce}{%
+           family={VanderBilt},
+           familyi={V\bibinitperiod},
+           given={Eli},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d025c5904626f59c3130bcda8ef9f453}{%
+           family={Kembhavi},
+           familyi={K\bibinitperiod},
+           given={Aniruddha},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce5550f8b9b930b07de1681387feb3fa}{%
+           family={Vondrick},
+           familyi={V\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e67eba235a8cccf3a69b746a53d5722}{%
+           family={Gkioxari},
+           familyi={G\bibinitperiod},
+           given={Georgia},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de3565c2e23b7fec25bd2da3c08f6b21}{%
+           family={Ehsani},
+           familyi={E\bibinitperiod},
+           given={Kiana},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bca2cf46e9eed1a3bcc54f4286b4e013}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Ludwig},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=396c6ddedb6f986906fc3e4994d19974}{%
+           family={Farhadi},
+           familyi={F\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{7cdd77b95af91cb124d9ea82036a0408}
+      \strng{fullhash}{2bae79bcdfaf3e9b0cf56c19e4f24b2a}
+      \strng{bibnamehash}{0a1f76732442e1ea90fc8c758a2d0409}
+      \strng{authorbibnamehash}{0a1f76732442e1ea90fc8c758a2d0409}
+      \strng{authornamehash}{7cdd77b95af91cb124d9ea82036a0408}
+      \strng{authorfullhash}{2bae79bcdfaf3e9b0cf56c19e4f24b2a}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Natural language processing and 2D vision models have attained remarkable proficiency on many tasks primarily by escalating the scale of training data. However, 3D vision tasks have not seen the same progress, in part due to the challenges of acquiring high-quality 3D data. In this work, we present Objaverse-XL, a dataset of over 10 million 3D objects. Our dataset comprises deduplicated 3D objects from a diverse set of sources, including manually designed objects, photogrammetry scans of landmarks and everyday items, and professional scans of historic and antique artifacts. Representing the largest scale and diversity in the realm of 3D datasets, Objaverse-XL enables significant new possibilities for 3D vision. Our experiments demonstrate the improvements enabled with the scale provided by Objaverse-XL. We show that by training Zero123 on novel view synthesis, utilizing over 100 million multi-view rendered images, we achieve strong zero-shot generalization abilities. We hope that releasing Objaverse-XL will enable further innovations in the field of 3D vision at scale.}
+      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems} 37}
+      \field{title}{Objaverse-{XL}: {A} {Universe} of {10M}+ {3D} {Objects}}
+      \field{year}{2023}
+      \verb{file}
+      \verb Deitke et al. - Objaverse-XL A Universe of 10M+ 3D Objects.pdf:/Users/felix/Zotero/storage/XKFV37YN/Deitke et al. - Objaverse-XL A Universe of 10M+ 3D Objects.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{furukawa_accurate_2010}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=352b1ed7e14d74b1f159928c01ed9078}{%
+           family={Furukawa},
+           familyi={F\bibinitperiod},
+           given={Yasutaka},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ee672c13ddea8aa3bc5a45024cfd7354}{%
+           family={Ponce},
+           familyi={P\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \strng{fullhash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \strng{bibnamehash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \strng{authorbibnamehash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \strng{authornamehash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \strng{authorfullhash}{0aab0e5a2280e34eb2a53a4b1e7e0575}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{This paper proposes a novel algorithm for multiview stereopsis that outputs a dense set of small rectangular patches covering the surfaces visible in the images. Stereopsis is implemented as a match, expand, and filter procedure, starting from a sparse set of matched keypoints, and repeatedly expanding these before using visibility constraints to filter away false matches. The keys to the performance of the proposed algorithm are effective techniques for enforcing local photometric consistency and global visibility constraints. Simple but effective methods are also proposed to turn the resulting patch model into a mesh which can be further refined by an algorithm that enforces both photometric consistency and regularization constraints. The proposed approach automatically detects and discards outliers and obstacles and does not require any initialization in the form of a visual hull, a bounding box, or valid depth ranges. We have tested our algorithm on various data sets including objects with fine surface details, deep concavities, and thin structures, outdoor scenes observed from a restricted set of viewpoints, and “crowded” scenes where moving obstacles appear in front of a static structure of interest. A quantitative evaluation on the Middlebury benchmark [1] shows that the proposed method outperforms all others submitted so far for four out of the six data sets.}
+      \field{issn}{0162-8828}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{Accurate, {Dense}, and {Robust} {Multiview} {Stereopsis}}
+      \field{urlday}{31}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{32}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \field{pages}{1362\bibrangedash 1376}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/TPAMI.2009.161
+      \endverb
+      \verb{file}
+      \verb Furukawa and Ponce - 2010 - Accurate, Dense, and Robust Multiview Stereopsis.pdf:/Users/felix/Zotero/storage/GWHI5VUW/Furukawa and Ponce - 2010 - Accurate, Dense, and Robust Multiview Stereopsis.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/5226635/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/5226635/
+      \endverb
+    \endentry
+    \entry{goodfellow_generative_2014}{inproceedings}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a341d25f80a8118cdbb90b272adc8b4f}{%
+           family={Pouget-Abadie},
+           familyi={P\bibinithyphendelim A\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e80f4779b032f68a6106e1424345450}{%
+           family={Mirza},
+           familyi={M\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=743dd6cdaa6639320289d219d351d7b7}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8151f1b8f85a048cacb34f374ec922b}{%
+           family={Warde-Farley},
+           familyi={W\bibinithyphendelim F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ca00ffd7cc35f7cfb8f698aa9239c76}{%
+           family={Ozair},
+           familyi={O\bibinitperiod},
+           given={Sherjil},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
+      \strng{namehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{fullhash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{bibnamehash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{authorbibnamehash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{authornamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorfullhash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose a new framework for estimating generative models via adversarial nets, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to 1/2 everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitatively evaluation of the generated samples.}
+      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems}}
+      \field{title}{Generative {Adversarial} {Nets}}
+      \field{urlday}{2}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{27}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/9E7NYE7J/Goodfellow et al. - 2014 - Generative Adversarial Nets.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2014/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper_files/paper/2014/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html
+      \endverb
+    \endentry
+    \entry{horn_shape_1989}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9b352b2ef9f56389d1561fc4884a77cf}{%
+           family={Horn},
+           familyi={H\bibinitperiod},
+           given={Berthold},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74c1d2b0ecddf3ef813c9cfabbbacdc9}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \strng{fullhash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \strng{bibnamehash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \strng{authorbibnamehash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \strng{authornamehash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \strng{authorfullhash}{7fceb57186ee1674b1534fb8e6b4492c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The image of the world projected onto the retina is essentially two-dimensional. From this image we recover information about the shapes of objects in a three-dimensional world. How is this done? The answer lies in part in the variation of brightness, or shading, often exhibited in a region of an image. In a photograph of a face, for example, there are variations in brightness, even though the reflecting properties of the skin presumably do not vary much from place to place. It may be concluded that shading effects arise primarily because some parts of a surface are oriented so as to reflect more of the incident light toward the viewer than are others. It should be pointed out right away that the recovery of shape from shading is by no means trivial. We cannot simply associate a given image brightness with a particular surface orientation. The problem is that there are two degrees of freedom to surface orientation - it takes two numbers to specify the direction of a unit vector perpendicular to the surface. Since we have only one brightness measurement at each picture cell, we have one equation in two unknowns at every point in the image. Additional constraint must therefore be brought to bear. One way to provide the needed constraint is to assume that the surface is continuous and smooth, so that the surface orientations of neighboring surface patches are not independent. Note that there is no magic at work here: we are not recovering a function of three variables given only a function of two variables. The distribution of some absorbing material in three-dimensional space cannot be recovered from a single two-dimensional projection. The techniques of tomographic reconstruction can be applied to that problem, but only if a large number of images taken from many different viewpoints are available. Why then are we able to learn so much about the three-dimensional world from merely two-dimensional images?}
+      \field{month}{1}
+      \field{title}{Shape from {Shading}}
+      \field{volume}{2}
+      \field{year}{1989}
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/SWMEEDE8/Horn and Brooks - 1989 - Shape from Shading.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{krizhevsky_imagenet_2012}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
+           family={Krizhevsky},
+           familyi={K\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=813bd95fe553e6079cd53a567b238287}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
+      \strng{namehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{fullhash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{bibnamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authorbibnamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authornamehash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \strng{authorfullhash}{1a23c09aa65b3c2ade45ed18d8127375}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We trained a large, deep convolutional neural network to classify the 1.3 million high-resolution images in the LSVRC-2010 ImageNet training set into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 39.7{\textbackslash}\% and 18.9{\textbackslash}\% which is considerably better than the previous state-of-the-art results. The neural network, which has 60 million parameters and 500,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and two globally connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of convolutional nets. To reduce overfitting in the globally connected layers we employed a new regularization method that proved to be very effective.}
+      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems}}
+      \field{title}{{ImageNet} {Classification} with {Deep} {Convolutional} {Neural} {Networks}}
+      \field{urlday}{31}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{25}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/C9LGY9DE/Krizhevsky et al. - 2012 - ImageNet Classification with Deep Convolutional Ne.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html
+      \endverb
+    \endentry
+    \entry{liu_one-2-3-45_2023-1}{misc}{}
+      \name{author}{10}{ul=2}{%
+        {{un=0,uniquepart=base,hash=6ac14fc080766f8e5b43597271fb7166}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Minghua},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=667fd98cabeeb211050b4ad856beab2b}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Ruoxi},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afa945a730938bda4089ee53eddf26f8}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Linghao},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ad059d5f99ec970258c48af6ec9f180}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhuoyang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e51bd353d330d0203232b51fcbc2b64a}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9a56558782a316789fd5edd7b2b7e23}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Xinyue},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31fd73f5cc5cf26d0beb31c03a818ce6}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hansheng},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9076b892148058841c497a4e672e8387}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Chong},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2f67bb2d9289522cc15cad01adb8c613}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Jiayuan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18c26ddba8b9dd77f278213fd4e93ce4}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{35edc73645ac5f7b381335b68ee61475}
+      \strng{fullhash}{f65ca37366cc96e4f6d6e77298c389db}
+      \strng{bibnamehash}{f65ca37366cc96e4f6d6e77298c389db}
+      \strng{authorbibnamehash}{f65ca37366cc96e4f6d6e77298c389db}
+      \strng{authornamehash}{35edc73645ac5f7b381335b68ee61475}
+      \strng{authorfullhash}{f65ca37366cc96e4f6d6e77298c389db}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Recent advancements in open-world 3D object generation have been remarkable, with image-to-3D methods offering superior fine-grained control over their text-to-3D counterparts. However, most existing models fall short in simultaneously providing rapid generation speeds and high fidelity to input images - two features essential for practical applications. In this paper, we present One-2-3-45++, an innovative method that transforms a single image into a detailed 3D textured mesh in approximately one minute. Our approach aims to fully harness the extensive knowledge embedded in 2D diffusion models and priors from valuable yet limited 3D data. This is achieved by initially finetuning a 2D diffusion model for consistent multi-view image generation, followed by elevating these images to 3D with the aid of multi-view conditioned 3D native diffusion models. Extensive experimental evaluations demonstrate that our method can produce high-quality, diverse 3D assets that closely mirror the original input image. Our project webpage: https://sudo-ai-3d.github.io/One2345plus\_page.}
+      \field{month}{11}
+      \field{note}{arXiv:2311.07885 [cs]}
+      \field{shorttitle}{One-2-3-45++}
+      \field{title}{One-2-3-45++: {Fast} {Single} {Image} to {3D} {Objects} with {Consistent} {Multi}-{View} {Generation} and {3D} {Diffusion}}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv.org Snapshot:/Users/felix/Zotero/storage/P33PW48P/2311.html:text/html;Full Text PDF:/Users/felix/Zotero/storage/ZVULD83E/Liu et al. - 2023 - One-2-3-45++ Fast Single Image to 3D Objects with.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2311.07885
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2311.07885
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Graphics}
+    \endentry
+    \entry{liu_one-2-3-45_2023}{inproceedings}{}
+      \name{author}{7}{ul=2}{%
+        {{un=0,uniquepart=base,hash=6ac14fc080766f8e5b43597271fb7166}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Minghua},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e51bd353d330d0203232b51fcbc2b64a}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a3ce8e7ae01c95f135eea345805666b9}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Haian},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afa945a730938bda4089ee53eddf26f8}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Linghao},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f29dca5a00fb77ca68b6af8989d7ab78}{%
+           family={Varma\bibnamedelima T},
+           familyi={V\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Mukund},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d77efd3cf0c8b4edfa93ab086b20a0e8}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zexiang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=18c26ddba8b9dd77f278213fd4e93ce4}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{fb06e2afefddbf9255b1c97f3c1483db}
+      \strng{fullhash}{f7614cceeedbe585dd1ad5d96c6a0bfb}
+      \strng{bibnamehash}{f7614cceeedbe585dd1ad5d96c6a0bfb}
+      \strng{authorbibnamehash}{f7614cceeedbe585dd1ad5d96c6a0bfb}
+      \strng{authornamehash}{fb06e2afefddbf9255b1c97f3c1483db}
+      \strng{authorfullhash}{f7614cceeedbe585dd1ad5d96c6a0bfb}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Single image 3D reconstruction is an important but challenging task that requires extensive knowledge of our natural world. Many existing methods solve this problem by optimizing a neural radiance field under the guidance of 2D diffusion models but suffer from lengthy optimization time, 3D inconsistency results, and poor geometry. In this work, we propose a novel method that takes a single image of any object as input and generates a full 360-degree 3D textured mesh in a single feed-forward pass. Given a single image, we first use a view-conditioned 2D diffusion model, Zero123, to generate multi-view images for the input view, and then aim to lift them up to 3D space. Since traditional reconstruction methods struggle with inconsistent multi-view predictions, we build our 3D reconstruction module upon an SDF-based generalizable neural surface reconstruction method and propose several critical training strategies to enable the reconstruction of 360degree meshes. Without costly optimizations, our method reconstructs 3D shapes in significantly less time than existing methods. Moreover, our method favors better geometry, generates more 3D consistent results, and adheres more closely to the input image. We evaluate our approach on both synthetic data and in-the-wild images and demonstrate its superiority in terms of both mesh quality and runtime. In addition, our approach can seamlessly support the text-to-3D task by integrating with off-the-shelf text-to-image diffusion models.}
+      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems} 36}
+      \field{month}{6}
+      \field{title}{One-2-3-45: {Any} {Single} {Image} to {3D} {Mesh} in 45 {Seconds} without {Per}-{Shape} {Optimization}}
+      \field{year}{2023}
+      \verb{file}
+      \verb Liu et al. - One-2-3-45 Any Single Image to 3D Mesh in 45 Seco.pdf:/Users/felix/Zotero/storage/UUVV6DEK/Liu et al. - One-2-3-45 Any Single Image to 3D Mesh in 45 Seco.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{liu_zero-1--3_2023}{inproceedings}{}
+      \name{author}{6}{ul=2}{%
+        {{un=0,uniquepart=base,hash=eaeafee5039d75d6f79b94ef3c586460}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ruoshi},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7768b88980ac3242f2d39d3d7eb20b66}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Rundi},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b4d8776b215eaaf591cfd7033564bb7}{%
+           family={Van\bibnamedelima Hoorick},
+           familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Basile},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8abec0f59c6c60862e393bd7ca9d1aa8}{%
+           family={Tokmakov},
+           familyi={T\bibinitperiod},
+           given={Pavel},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4c80aac087c31b631bb9a8c24aec918}{%
+           family={Zakharov},
+           familyi={Z\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce5550f8b9b930b07de1681387feb3fa}{%
+           family={Vondrick},
+           familyi={V\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{5754383d66cee7687f362ff778fd0a31}
+      \strng{fullhash}{767e5820fb59184574dcf32e73e68bcd}
+      \strng{bibnamehash}{767e5820fb59184574dcf32e73e68bcd}
+      \strng{authorbibnamehash}{767e5820fb59184574dcf32e73e68bcd}
+      \strng{authornamehash}{5754383d66cee7687f362ff778fd0a31}
+      \strng{authorfullhash}{767e5820fb59184574dcf32e73e68bcd}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{shorttitle}{Zero-1-to-3}
+      \field{title}{Zero-1-to-3: {Zero}-shot {One} {Image} to {3D} {Object}}
+      \field{urlday}{31}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{9298\bibrangedash 9309}
+      \range{pages}{12}
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/8NNXIDZF/Liu et al. - 2023 - Zero-1-to-3 Zero-shot One Image to 3D Object.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://openaccess.thecvf.com/content/ICCV2023/html/Liu_Zero-1-to-3_Zero-shot_One_Image_to_3D_Object_ICCV_2023_paper.html
+      \endverb
+      \verb{url}
+      \verb https://openaccess.thecvf.com/content/ICCV2023/html/Liu_Zero-1-to-3_Zero-shot_One_Image_to_3D_Object_ICCV_2023_paper.html
+      \endverb
+    \endentry
+    \entry{mildenhall_nerf_2021}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a3567364ab52973659adf74ee0c6e6f3}{%
+           family={Mildenhall},
+           familyi={M\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b503d22b8c86fb9dfd477d2f70a59650}{%
+           family={Srinivasan},
+           familyi={S\bibinitperiod},
+           given={Pratul\bibnamedelima P.},
+           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a18985a5c8b8be23d0ec9de0a3c87b9}{%
+           family={Tancik},
+           familyi={T\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=562f3254a241932db4a6d44a97473ec5}{%
+           family={Barron},
+           familyi={B\bibinitperiod},
+           given={Jonathan\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7e274981ceb0dd123d44af35cc7bedf}{%
+           family={Ramamoorthi},
+           familyi={R\bibinitperiod},
+           given={Ravi},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96e30bdc2cf905aa1109c46617b16252}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Ren},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{094342ecc1d4c7df1a909882dd0a89cd}
+      \strng{fullhash}{9bee638bba28fb3cd739399aa8dc9983}
+      \strng{bibnamehash}{9bee638bba28fb3cd739399aa8dc9983}
+      \strng{authorbibnamehash}{9bee638bba28fb3cd739399aa8dc9983}
+      \strng{authornamehash}{094342ecc1d4c7df1a909882dd0a89cd}
+      \strng{authorfullhash}{9bee638bba28fb3cd739399aa8dc9983}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{We present a method that achieves state-of-the-art results for synthesizing novel views of complex scenes by optimizing an underlying continuous volumetric scene function using a sparse set of input views. Our algorithm represents a scene using a fully connected (nonconvolutional) deep network, whose input is a single continuous 5D coordinate (spatial location (x, y, z) and viewing direction (θ, ϕ)) and whose output is the volume density and view-dependent emitted radiance at that spatial location. We synthesize views by querying 5D coordinates along camera rays and use classic volume rendering techniques to project the output colors and densities into an image. Because volume rendering is naturally differentiable, the only input required to optimize our representation is a set of images with known camera poses. We describe how to effectively optimize neural radiance fields to render photorealistic novel views of scenes with complicated geometry and appearance, and demonstrate results that outperform prior work on neural rendering and view synthesis.}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Communications of the ACM}
+      \field{month}{12}
+      \field{number}{1}
+      \field{shorttitle}{{NeRF}}
+      \field{title}{{NeRF}: representing scenes as neural radiance fields for view synthesis}
+      \field{urlday}{1}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{65}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{99\bibrangedash 106}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1145/3503250
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/5PAZVEGR/Mildenhall et al. - 2021 - NeRF representing scenes as neural radiance field.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3503250
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3503250
+      \endverb
+    \endentry
+    \entry{park_deepsdf_2019}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=cef3fbbccf81ac6acea8e00c8137c326}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jeong\bibnamedelima Joon},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f71cfa4ac4c47fb53ec82f01d708c71}{%
+           family={Florence},
+           familyi={F\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=449da8c93866a386da0e55cfd97629b1}{%
+           family={Straub},
+           familyi={S\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=239670d06a0c3f1468b54a7264838ce6}{%
+           family={Newcombe},
+           familyi={N\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7c982cac058f95aeb5e1e584f764c82}{%
+           family={Lovegrove},
+           familyi={L\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Long Beach, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{30ba824db16c5501cf28476ce5ecc005}
+      \strng{fullhash}{8927ca8e6f9564821df0550ceb47683d}
+      \strng{bibnamehash}{8927ca8e6f9564821df0550ceb47683d}
+      \strng{authorbibnamehash}{8927ca8e6f9564821df0550ceb47683d}
+      \strng{authornamehash}{30ba824db16c5501cf28476ce5ecc005}
+      \strng{authorfullhash}{8927ca8e6f9564821df0550ceb47683d}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Computer graphics, 3D computer vision and robotics communities have produced multiple approaches to representing 3D geometry for rendering and reconstruction. These provide trade-offs across ﬁdelity, efﬁciency and compression capabilities. In this work, we introduce DeepSDF, a learned continuous Signed Distance Function (SDF) representation of a class of shapes that enables high quality shape representation, interpolation and completion from partial and noisy 3D input data. DeepSDF, like its classical counterpart, represents a shape’s surface by a continuous volumetric ﬁeld: the magnitude of a point in the ﬁeld represents the distance to the surface boundary and the sign indicates whether the region is inside (-) or outside (+) of the shape, hence our representation implicitly encodes a shape’s boundary as the zero-level-set of the learned function while explicitly representing the classiﬁcation of space as being part of the shapes’ interior or not. While classical SDF’s both in analytical or discretized voxel form typically represent the surface of a single shape, DeepSDF can represent an entire class of shapes. Furthermore, we show stateof-the-art performance for learned 3D shape representation and completion while reducing the model size by an order of magnitude compared with previous work.}
+      \field{booktitle}{2019 {IEEE}/{CVF} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}
+      \field{isbn}{978-1-72813-293-8}
+      \field{month}{6}
+      \field{shorttitle}{{DeepSDF}}
+      \field{title}{{DeepSDF}: {Learning} {Continuous} {Signed} {Distance} {Functions} for {Shape} {Representation}}
+      \field{urlday}{1}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{165\bibrangedash 174}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/CVPR.2019.00025
+      \endverb
+      \verb{file}
+      \verb Park et al. - 2019 - DeepSDF Learning Continuous Signed Distance Funct.pdf:/Users/felix/Zotero/storage/JERQCY7Q/Park et al. - 2019 - DeepSDF Learning Continuous Signed Distance Funct.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8954065/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8954065/
+      \endverb
+    \endentry
+    \entry{tochilkin_triposr_2024}{misc}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=e99cc81f4a87795cb5e02e41f5d39000}{%
+           family={Tochilkin},
+           familyi={T\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=150c67287f8834be2ae238871223e18f}{%
+           family={Pankratz},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5910eaa37b4edf2d95ddc5595b6fd2c6}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zexiang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=11b0b5c62236f2f129ba77db962b1139}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zixuan},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13a8aa0e88d3b6b539554f0b547f8aab}{%
+           family={Letts},
+           familyi={L\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4cda05b3d97e49b2474b3de4dffa3047}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yangguang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae65928d918307348aac007e99fb8261}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Ding},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b83a18c1b0e87da620fb1bb8301cf5e9}{%
+           family={Laforte},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=08e660cb85b2ce40d958c270e2a0d1cb}{%
+           family={Jampani},
+           familyi={J\bibinitperiod},
+           given={Varun},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4471571b8895df0f841330f05c415ecb}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yan-Pei},
+           giveni={Y\bibinithyphendelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{9c2f6131b67bbf12675c68e09f2554b6}
+      \strng{fullhash}{b44f92f3bb8a889b2d9feea1b230a5f1}
+      \strng{bibnamehash}{b44f92f3bb8a889b2d9feea1b230a5f1}
+      \strng{authorbibnamehash}{b44f92f3bb8a889b2d9feea1b230a5f1}
+      \strng{authornamehash}{9c2f6131b67bbf12675c68e09f2554b6}
+      \strng{authorfullhash}{b44f92f3bb8a889b2d9feea1b230a5f1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This technical report introduces TripoSR, a 3D reconstruction model leveraging transformer architecture for fast feed-forward 3D generation, producing 3D mesh from a single image in under 0.5 seconds. Building upon the LRM network architecture, TripoSR integrates substantial improvements in data processing, model design, and training techniques. Evaluations on public datasets show that TripoSR exhibits superior performance, both quantitatively and qualitatively, compared to other open-source alternatives. Released under the MIT license, TripoSR is intended to empower researchers, developers, and creatives with the latest advancements in 3D generative AI.}
+      \field{annotation}{Comment: Model: https://huggingface.co/stabilityai/TripoSR Code: https://github.com/VAST-AI-Research/TripoSR Demo: https://huggingface.co/spaces/stabilityai/TripoSR}
+      \field{month}{3}
+      \field{note}{arXiv:2403.02151 [cs]}
+      \field{shorttitle}{{TripoSR}}
+      \field{title}{{TripoSR}: {Fast} {3D} {Object} {Reconstruction} from a {Single} {Image}}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb arXiv.org Snapshot:/Users/felix/Zotero/storage/AVGNJYZY/2403.html:text/html;Full Text PDF:/Users/felix/Zotero/storage/74H5KZ7G/Tochilkin et al. - 2024 - TripoSR Fast 3D Object Reconstruction from a Sing.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2403.02151
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2403.02151
+      \endverb
+      \keyw{Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{ullman_interpretation_1997}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e01a5c7b28b5335b6aa6c378a077c971}{%
+           family={Ullman},
+           familyi={U\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bd7960a4d98c1f4de926c22a4cd3ac3a}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={Sydney},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \strng{fullhash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \strng{bibnamehash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \strng{authorbibnamehash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \strng{authornamehash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \strng{authorfullhash}{e9b69cd1f59e8176b885ca47dead92fa}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{The interpretation of structure from motion is examined from a computional point of view. The question addressed is how the three dimen­sional structure and motion of objects can be inferred from the two dimensional transformations of their projected images when no three dimensional information is conveyed by the individual projections. The following scheme is proposed: (i) divide the image into groups of four elements each; (ii) test each group for a rigid interpretation; (iii) combine the results obtained in (ii). It is shown that this scheme will correctly decompose scenes containing arbitrary rigid objects in motion, recovering their three dimensional structure and motion. The analysis is based primarily on the ʻstructure from motion’ theorem which states that the structure of four non-coplanar points is recoverable from three orthographic projections. The interpretation scheme is extended to cover perspective projections, and its psychological relevance is discussed.}
+      \field{journaltitle}{Proceedings of the Royal Society of London. Series B. Biological Sciences}
+      \field{month}{1}
+      \field{note}{Publisher: Royal Society}
+      \field{number}{1153}
+      \field{title}{The interpretation of structure from motion}
+      \field{urlday}{2}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{203}
+      \field{year}{1997}
+      \field{urldateera}{ce}
+      \field{pages}{405\bibrangedash 426}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1098/rspb.1979.0006
+      \endverb
+      \verb{file}
+      \verb Submitted Version:/Users/felix/Zotero/storage/HGI98PSP/Ullman and Brenner - 1997 - The interpretation of structure from motion.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://royalsocietypublishing.org/doi/abs/10.1098/rspb.1979.0006
+      \endverb
+      \verb{url}
+      \verb https://royalsocietypublishing.org/doi/abs/10.1098/rspb.1979.0006
+      \endverb
+    \endentry
+    \entry{wang_pixel2mesh_2018}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=97e22682ece3f93b74dc511de68b3a10}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Nanyang},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ed51f88738c7554b8b944402348e5785}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yinda},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=90714408557745f208b91ec0eec7dfcc}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhuwen},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df090ade604462dbf1923c710d7e9a6d}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={Yanwei},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0e0d23e2d09e45e6f51cc2bcea6d9f9}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8e17c5827ebe84d568484e45130307d}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Yu-Gang},
+           giveni={Y\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{08d9c5f2986881e147c373fadc35100b}
+      \strng{fullhash}{da489e2eba0816d368f6ae4dd34d1f39}
+      \strng{bibnamehash}{da489e2eba0816d368f6ae4dd34d1f39}
+      \strng{authorbibnamehash}{da489e2eba0816d368f6ae4dd34d1f39}
+      \strng{authornamehash}{08d9c5f2986881e147c373fadc35100b}
+      \strng{authorfullhash}{da489e2eba0816d368f6ae4dd34d1f39}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{shorttitle}{{Pixel2Mesh}}
+      \field{title}{{Pixel2Mesh}: {Generating} {3D} {Mesh} {Models} from {Single} {RGB} {Images}}
+      \field{urlday}{1}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{52\bibrangedash 67}
+      \range{pages}{16}
+      \verb{file}
+      \verb Full Text PDF:/Users/felix/Zotero/storage/67WU2XJM/Wang et al. - 2018 - Pixel2Mesh Generating 3D Mesh Models from Single .pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://openaccess.thecvf.com/content_ECCV_2018/html/Nanyang_Wang_Pixel2Mesh_Generating_3D_ECCV_2018_paper.html
+      \endverb
+      \verb{url}
+      \verb https://openaccess.thecvf.com/content_ECCV_2018/html/Nanyang_Wang_Pixel2Mesh_Generating_3D_ECCV_2018_paper.html
+      \endverb
+    \endentry
+    \entry{zhirong_wu_3d_2015}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=66b63d7f3bb61ae55c7c1f76cb667217}{%
+           family={{Zhirong Wu}},
+           familyi={Z\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=5abaf8ffacdb02cbfe12fca8f3d327cb}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Shuran},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8d6add84efe17681e0d4968ebf47fdc}{%
+           family={Khosla},
+           familyi={K\bibinitperiod},
+           given={Aditya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=519a81442a3937c69e84c22f6d3bec8a}{%
+           family={{Fisher Yu}},
+           familyi={F\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=6c04c58f6b37d64ab9cee1a3693782ad}{%
+           family={{Linguang Zhang}},
+           familyi={L\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=ba3d84b61987117a3f558ba5bcb3b189}{%
+           family={{Xiaoou Tang}},
+           familyi={X\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=2bbe6a54045fb885f5d23a8bdd1ebb0d}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Jianxiong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Boston, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1ae4aab93f4476cfe83b4e7d12208c03}
+      \strng{fullhash}{c01a96a34cde9a0cab5342c6afd1434d}
+      \strng{bibnamehash}{c01a96a34cde9a0cab5342c6afd1434d}
+      \strng{authorbibnamehash}{c01a96a34cde9a0cab5342c6afd1434d}
+      \strng{authornamehash}{1ae4aab93f4476cfe83b4e7d12208c03}
+      \strng{authorfullhash}{c01a96a34cde9a0cab5342c6afd1434d}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{2015 {IEEE} {Conference} on {Computer} {Vision} and {Pattern} {Recognition} ({CVPR})}
+      \field{isbn}{978-1-4673-6964-0}
+      \field{month}{6}
+      \field{shorttitle}{{3D} {ShapeNets}}
+      \field{title}{{3D} {ShapeNets}: {A} deep representation for volumetric shapes}
+      \field{urlday}{31}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{1912\bibrangedash 1920}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/CVPR.2015.7298801
+      \endverb
+      \verb{file}
+      \verb Zhirong Wu et al. - 2015 - 3D ShapeNets A deep representation for volumetric.pdf:/Users/felix/Zotero/storage/QMFIM3UQ/Zhirong Wu et al. - 2015 - 3D ShapeNets A deep representation for volumetric.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/7298801/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/7298801/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

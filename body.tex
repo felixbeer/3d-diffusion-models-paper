@@ -35,6 +35,7 @@ Finally, it offers a brief look at use cases and applications that benefit the m
 
 \section{Concepts and Functionality}
 To understand the process of 3D mesh reconstruction, it is essential to understand the underlying concepts and techniques used in the field. This section provides a quick overview of the different methods and approaches used to generate 3D models from 2D images.
+
 \subsection{Shape from Shading}
 Starting with shape from shading, this is the most basic technique used to estimate the shape of an object from a single image, which dates back to the late 80s (\textcite{horn_shape_1989}).
 The basic idea is to use the shading information in the image to infer the 3D structure of the object. This is done by assuming that the object gets illuminated by a single light source and that the surface of the object is Lambertian, meaning that the surface reflects light uniformly in all directions. This by itself is a strong assumption, as most real-world objects are not perfectly Lambertian.
@@ -48,33 +49,66 @@ Estimating surface normals at each point on the object involves using the intens
 
 \subsection{Multi-view Stereo}
 Before the appearance of deep learning, multi-view stereo was the most common technique used for 3D reconstruction.
-The basic idea is to use multiple images of an object taken from different angles to estimate the 3D structure of the object.
+The basic idea is the concept of Structure from motion (SfM) and can not be sourced to a single publication but rather a collection of works.
+\textcite{ullman_interpretation_1997} were among the first ones to describe the process in a computational context.
+
+\paragraph
+"[…] the structure from motion theorem which states that the structure of 4 non-coplanar points is recoverable from 3 orthographic projections." \autocite{ullman_interpretation_1997}
+
+\paragraph
+In other words, SfM describes the use of multiple images of an object taken from different angles to estimate the 3D structure of the object.
 This is done by first estimating the camera parameters for each image and then using these parameters to triangulate the 3D points in the scene.
-\textcite{furukawa_accurate_2010}
+
+\textcite{furukawa_accurate_2010} proposed a robust and efficient algorithm based on many well established techniques like Difference of Gaussians (DoG) and Harris corner detection for feature detection and matching.
+
+The whole process of multi-view stereo has also gained great relevance in augmented and virtual reality to reconstruct and map the environment in real-time.
 
 \subsection{Convolutional Neural Networks}
 Convolutional Neural Networks (CNNs) have empowered the field of computer vision and have found applications in many areas, including 3D mesh reconstruction.
-CNNs are a type of deep learning model that are especially good at working with image data. They are designed to automatically and adaptively learn spatial hierarchies of features from the data.
-A very popular CNN architecture is the AlexNet \autocite{krizhevsky_imagenet_2012}.
-\textcite{krizhevsky_imagenet_2012}
+CNNs are a type of deep learning models that are especially good at working with image data. They are designed to automatically and adaptively learn spatial hierarchies of features from the data.
+\paragraph{}
+AlexNet by \textcite{krizhevsky_imagenet_2012} was one of the first applications of CNNs to image classification and delivered a significant performance improvement: “On the test data, we achieved top-1 and top-5 error rates of 37.5\% and 17.0\% which is considerably better than the previous state-of-the-art.” \autocite{krizhevsky_imagenet_2012}
+Top-1 and top-5 error rates are common metrics used to evaluate the performance of image classification models. The top-1 error rate is the percentage of images for which the correct label is not in the top-1 predicted labels, while the top-5 error rate is the percentage of images for which the correct label is not in the top-5 predicted labels.
 
-\subsection{Voxel-based Approaches}
-\textcite{zhirong_wu_3d_2015}
+\subsection{Generative Adversarial Networks}
+Generative Adversarial Networks (GAN) \autocite{goodfellow_generative_2014} are a type of deep learning model that consists of two neural networks: a generator and a discriminator. The generator is responsible for generating new data samples, while the discriminator is responsible for distinguishing between real and generated data samples. The two networks are trained together in competition, where the generator tries to generate realistic data samples to fool the discriminator, and the discriminator tries to distinguish between real and generated data samples.
+\paragraph{}
+In the context of 3D mesh reconstruction, CNNs and GANs are often used together to generate 3D models from 2D images. The CNN is used to extract features from the input image, and the GAN is used to generate the 3D model from these features. One example of this is the Pixel2Mesh++ model by \textcite{wen_pixel2mesh_2019}.
 
-\subsection{Point Cloud-based Approaches}
-\textcite{charles_pointnet_2017}
-\subsection{Mesh-based Approaches}
-\textcite{wang_pixel2mesh_2018}
 \subsection{Neural Implicit Functions}
-
+...
 \textcite{park_deepsdf_2019}
 \textcite{mildenhall_nerf_2021}
 
 \section{Models}
 
-
-\subsection{Models}
 In the recent years several models have been developed to generate 3D models from 2D images. Some of the most prominent models include:
+
+\subsection{Pixel2Mesh}
+Pixel2Mesh is a model developed by \textcite{wang_pixel2mesh_2018}.
+It is built with two main components. The image feature network which is a convolutional neural network (CNN) that extracts perceptual features from the input image. The second component is a cascaded mesh deformation network which is a graph-based convolution network.
+
+A graph-based convolution network differs from traditional CNNs in that it operates on a graph rather than a grid. In the context of Pixel2Mesh, the graph represents the 3D mesh model with vertices and edges.
+
+\paragraph{}
+The Pixel2Mesh model works in the following steps:
+\begin{enumerate}
+    \item The input image is passed through the image feature network to extract features.
+    \item The cascaded mesh deformation network initializes with an ellipsoid mesh model.
+    \item The features extracted from the image are then taken to refine the shape of the mesh model.
+    \item The mesh model gets refined iteratively in 3 blocks, with each iteration refining the shape and increasing the mesh resolution. (see Figure \ref{fig:pixel2mesh})
+    \item The vertex positions get estimated each step, which are then used to look up the features from the image feature network for the next iteration.
+\end{enumerate}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/pixel2mesh.jpg}
+    \caption{Pixel2Mesh Pipeline \autocite{horn_shape_1989}}
+    \label{fig:pixel2mesh}
+\end{figure}
+
+\subsection{Pixel2Mesh++}
+Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} is an extension of the original Pixel2Mesh model. It improves the performance by incorporating a Generative Adversarial Network (GAN) like approach.
+
 \subsubsection{One-2-3-45}
 This model was developed by \textcite{liu_one-2-3-45_2023-1}...
 
