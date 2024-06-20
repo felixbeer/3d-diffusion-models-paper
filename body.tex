@@ -6,10 +6,16 @@
 \section{Introduction}
 \label{section:Introduction}
 In today's world, nearly every industry uses 3D models to visually represent objects or environments. Whether for entertainment, development, or research, 3D models are essential tools for understanding complex concepts and ideas.
+Another exemplary field is real estate development, where architects and engineers utilize Building Information Modeling (BIM). BIM improves collaboration and efficiency in construction projects by integrating various aspects of a building's lifecycle, from initial design through maintenance and deconstruction, into 3D models \autocite{azhar_building_2020}.
 
-Creating these models is a time-consuming and costly process that requires skilled artists and designers, especially when compared to taking pictures or recording videos with cameras or smartphones. However, recent advancements in Generative 3D AI have made it possible to generate 3D models from a single image. This process, known as 3D object- or mesh-reconstruction, has the potential to transform and partially automate the creation and use of 3D models.
 
-Some examples include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}), One-2-3-45 (\textcite{liu_one-2-3-45_2023}), and One-2-3-45++ (\textcite{liu_one-2-3-45_2023-1}).
+With modern interactive media, the demand for high-quality and numerous 3D models has significantly increased. Triple-A games and blockbuster movies heavily rely on detailed 3D models to create true-to-life experiences.
+
+However, creating these models is a time-consuming and costly process that requires skilled artists and designers, especially when compared to capturing images or videos with cameras or smartphones. Recent advancements in Generative 3D AI have made it possible to generate 3D models from a single image, a process known as 3D object or mesh reconstruction.
+
+While the generated models are currently not yet at the level required for Triple-A games or the high standards of the entertainment industry, it holds significant potential for transforming and partially automating the creation and use of 3D models. At present, these technologies are more suitable for smaller prototyping projects or indie productions.
+
+Some examples of 3D mesh reconstruction include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}), One-2-3-45 (\textcite{liu_one-2-3-45_2023}), and One-2-3-45++ (\textcite{liu_one-2-3-45_2023-1}).
 
 This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance and visual results.
 Furthermore, it discusses the different strategies like voxel-based \autocite{zhirong_wu_3d_2015}, point cloud-based \autocite{charles_pointnet_2017}, and mesh-based \autocite{wang_pixel2mesh_2018} methods.
@@ -34,51 +40,108 @@ Finally, it offers a brief look at use cases and applications that benefit the m
 % See code \ref{lst:example} for high efficiency code.
 
 \section{Concepts and Functionality}
-To understand the process of 3D mesh reconstruction, it is essential to understand the underlying concepts and techniques used in the field. This section provides a quick overview of the different methods and approaches used to generate 3D models from 2D images.
+To understand the process of 3D mesh reconstruction, it is essential to explore the various techniques employed to generate 3D models from 2D images.
+
+3D mesh reconstruction involves several methodologies, each contributing uniquely to the overall objective. Initial techniques like Shape from Shading \autocite{horn_shape_1989} utilized shading information to infer the 3D structure of objects. Multi-view Stereo (MVS) employed multiple images from different viewpoints to estimate 3D structure through triangulation methods.
+
+The introduction of Convolutional Neural Networks (CNNs) significantly improved the accuracy of 3D reconstructions by providing robust tools for image analysis and feature extraction. Generative Adversarial Networks (GANs \autocite{goodfellow_generative_2014}) further enhanced these capabilities by providing a better training method.
+Combining CNNs and GANs has led to advanced models such as Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} and made it possible to accurately estimate a complete three-dimensional model from a single image.
+
+Lastly Neural Implicit Functions, like NeRF \autocite{mildenhall_nerf_2021}, have further improved 3D reconstruction by using neural networks to model continuous volumetric functions which can generate high-quality 3D reconstructions with smooth surfaces.
+
+The following sections examine each technique in detail, exploring their specific mechanisms, innovations, and contributions to the field.
+
 
 \subsection{Shape from Shading}
-Starting with shape from shading, this is the most basic technique used to estimate the shape of an object from a single image, which dates back to the late 80s (\textcite{horn_shape_1989}).
-The basic idea is to use the shading information in the image to infer the 3D structure of the object. This is done by assuming that the object gets illuminated by a single light source and that the surface of the object is Lambertian, meaning that the surface reflects light uniformly in all directions. This by itself is a strong assumption, as most real-world objects are not perfectly Lambertian.
-Estimating surface normals at each point on the object involves using the intensity of the reflected light and then integrating the normals to estimate the object's depth. This technique was one of the first to show that basic 3D shape information could be recovered from a single image and has since inspired many other techniques for 3D reconstruction.
+Shape from Shading (SFS) is an early technique used to estimate the shape of an object from a single image, dating back to the late 80s (\textcite{horn_shape_1989}). This method aims to reconstruct the 3D shape of an object by analyzing shading information in a 2D image.
+
+The idea of SFS is to use variations in shading to infer the 3D geometry of an object's surface. This method operates under several key assumptions:
+
+\begin{enumerate}
+    \item Lambertian Reflectance: The surface of the object reflects light uniformly in all directions. This means the intensity of reflected light depends only on the angle between the light source and the surface normal.
+    \item Single Light Source: The object is illuminated by a single distant light source.
+    \item Known Light Source Direction: The direction of the light source relative to the camera is known.
+\end{enumerate}
+
+When all assumptions are met, the intensity of the reflected light in relation to the incoming light direction can be used to estimate the surface normals at each point of the object. By integrating these normals, the depth of the object can be estimated, providing a 3D representation of the object.
+
+While Shape from Shading is a robust technique, it has limitations. It requires accurate knowledge of the light source direction and assumes Lambertian reflectance, which does not hold up for real-world objects and results in a significant deviation from real light behavior \autocite{wolff_generalizing_1996}.
+This problem is not just present in the SFS method but also in a lot of other computer graphics and computer vision appliances, as a compromise for computational efficiency and simplicity.
+Additionally, the SFS is sensitive to noise and may produce inaccurate results in complex scenes.
+
+
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{images/shape_from_shading.jpg}
-    \caption{Shape from shading \autocite{horn_shape_1989}}
+    \includegraphics[width=0.9\linewidth]{images/shape_from_shading.jpg}
+    \caption{(a) A real face image. (b) Surface recovered from (a) by the generic SFS algorithm with the perspective model, with the light source located at the optical center. (taken from \textcite{he_advances_2018})}
     \label{fig:shape_from_shading}
 \end{figure}
 
 \subsection{Multi-view Stereo}
-Before the appearance of deep learning, multi-view stereo was the most common technique used for 3D reconstruction.
-The basic idea is the concept of Structure from motion (SfM) and can not be sourced to a single publication but rather a collection of works.
-\textcite{ullman_interpretation_1997} were among the first ones to describe the process in a computational context.
+Multi-view Stereo (MVS) uses multiple images of an object taken from different angles to estimate its 3D structure (see Figure \ref{fig:multi_view_stereo}). This concept, known as Structure from Motion (SfM), cannot be traced back to a single publication but is rather a collection of various works.
+Ullman \autocite{ullman_interpretation_1997} was among the first to describe the process in a computational context, noting that the structure of four non-coplanar points can be recovered from three orthographic projections.
 
-\paragraph
-"[…] the structure from motion theorem which states that the structure of 4 non-coplanar points is recoverable from 3 orthographic projections." \autocite{ullman_interpretation_1997}
+SfM involves the following steps:
 
-\paragraph
-In other words, SfM describes the use of multiple images of an object taken from different angles to estimate the 3D structure of the object.
-This is done by first estimating the camera parameters for each image and then using these parameters to triangulate the 3D points in the scene.
+\begin{enumerate}
+    \item Camera Calibration: Estimating intrinsic and extrinsic camera parameters. This involves focal length, principal point as well as distortion of each camera.
+    \item Feature Detection and Matching: Identifying and matching features using techniques like Difference of Gaussians (DoG) and Harris corner detection. \textcite{furukawa_accurate_2010} for example, proposed a robust and efficient algorithm based on these well-established techniques.
+    \item Pose Estimation: Determining relative positions and orientations of cameras based on features.
+    \item Triangulation: Using poses and features to estimate 3D points in the scene.
+    \item Dense Reconstruction: Interpolating the sparse 3D points to create a solid 3D model.
+\end{enumerate}
 
-\textcite{furukawa_accurate_2010} proposed a robust and efficient algorithm based on many well established techniques like Difference of Gaussians (DoG) and Harris corner detection for feature detection and matching.
+MVS has also gained significant relevance in augmented and virtual reality for real-time environment reconstruction and mapping.
 
-The whole process of multi-view stereo has also gained great relevance in augmented and virtual reality to reconstruct and map the environment in real-time.
+Despite its effectiveness, MVS has limitations, such as requiring multiple images from different viewpoints, which may not always be available.
+Moreover, MVS can struggle with textureless surfaces and repetitive patterns, which can make feature matching challenging.
+These limitations have driven the development and adoption of deep learning methods, which can overcome some of these challenges by learning from large datasets of images and 3D models.
 
-\subsection{Convolutional Neural Networks}
-Convolutional Neural Networks (CNNs) have empowered the field of computer vision and have found applications in many areas, including 3D mesh reconstruction.
-CNNs are a type of deep learning models that are especially good at working with image data. They are designed to automatically and adaptively learn spatial hierarchies of features from the data.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/multi_view_stereo.png}
+    \caption{Multi-view Stereo Pipeline (taken from \href{https://betterprogramming.pub/patchmatch-multi-view-stereo-1-2-fc46e5dfe912}{"PatchMatch Multi-View Stereo" by Thomas Rouch"})}
+    \label{fig:multi_view_stereo}
+\end{figure}
+
+\subsection{Convolutional Neural Networks} \label{section:cnns}
+Convolutional Neural Networks (CNNs) are deep learning models especially useful when working with image data. They have significantly impacted the field of computer vision and have found applications in many areas, including 3D mesh reconstruction.
+
+CNNs usually operate on grid-like structures, processing data with convolutional layers that capture spatial hierarchies of features through a series of filters. This grid-based operation is particularly effective for image data, where the spatial arrangement of pixels is crucial for understanding the content.
+
+Compared to traditional methods, like MVS, CNNs and the other following deep learning models can learn complex features from images and automatically extract relevant information for 3D reconstruction. They are also more robust to noise and variations in lighting conditions.
 \paragraph{}
-AlexNet by \textcite{krizhevsky_imagenet_2012} was one of the first applications of CNNs to image classification and delivered a significant performance improvement: “On the test data, we achieved top-1 and top-5 error rates of 37.5\% and 17.0\% which is considerably better than the previous state-of-the-art.” \autocite{krizhevsky_imagenet_2012}
+AlexNet by \textcite{krizhevsky_imagenet_2012} was one of the first successful applications of CNNs to image classification, achieving substantial performance improvements over previous methods. Specifically, AlexNet reduced top-1 error rates to 37.5\% and top-5 error rates to 17.0\%, which were significantly better than the previous state-of-the-art.
 Top-1 and top-5 error rates are common metrics used to evaluate the performance of image classification models. The top-1 error rate is the percentage of images for which the correct label is not in the top-1 predicted labels, while the top-5 error rate is the percentage of images for which the correct label is not in the top-5 predicted labels.
 
-\subsection{Generative Adversarial Networks}
+\subsection{Generative Adversarial Networks} \label{section:gans}
 Generative Adversarial Networks (GAN) \autocite{goodfellow_generative_2014} are a type of deep learning model that consists of two neural networks: a generator and a discriminator. The generator is responsible for generating new data samples, while the discriminator is responsible for distinguishing between real and generated data samples. The two networks are trained together in competition, where the generator tries to generate realistic data samples to fool the discriminator, and the discriminator tries to distinguish between real and generated data samples.
 \paragraph{}
 In the context of 3D mesh reconstruction, CNNs and GANs are often used together to generate 3D models from 2D images. The CNN is used to extract features from the input image, and the GAN is used to generate the 3D model from these features. One example of this is the Pixel2Mesh++ model by \textcite{wen_pixel2mesh_2019}.
 
 \subsection{Neural Implicit Functions}
-...
-\textcite{park_deepsdf_2019}
-\textcite{mildenhall_nerf_2021}
+Neural Implicit Functions represent an alternative approach to 3D reconstruction by using neural networks to model continuous volumetric functions. Unlike traditional methods that use explicit representations like meshes or voxels, neural implicit functions encode the geometry of 3D objects in a continuous function that can be evaluated at any point in 3D space.
+
+Neural implicit functions, such as DeepSDF \autocite{park_deepsdf_2019} and NeRF \autocite{mildenhall_nerf_2021}, use neural networks to map spatial coordinates to implicit representations of 3D shapes. These models learn a function that outputs a value indicating whether a point lies inside or outside the object (in the case of signed distance functions) or the density and color at a given spatial location (in the case of radiance fields).
+
+\paragraph{}
+Neural Implicit Functions usually work in the following steps:
+\begin{enumerate}
+    \item Data Collection: Collect dataset of 3D shaped and corresponding, annotated 2D images. An example of such a dataset is ShapeNet \autocite{chang_shapenet_2015}.
+    \item Network Training: Training the network to minimize error between the predicted and actual shape representation using the loss function. This process is similar to the fooling of the discriminator in GANs (\ref{section:gans}).
+    \item Shape Inference: Once trained, the network can infer the 3D shape from new inputs by querying the implicit function at various spatial locations to reconstruct the geometry.
+\end{enumerate}
+
+The main advantages of neural implicit functions include their continuous nature, which allows for high-quality reconstructions with smooth surfaces. Another advantage is the fact that they typically require less memory and computation compared to explicit representations like meshes or voxels created by deep convolutional networks like the aforementioned CNNs (\ref{section:cnns}).
+NeRFs — Neural Radiance Fields \autocite{mildenhall_nerf_2021} have been particularly successful in generating high-quality 3D reconstructions from 2D images (see Figure \ref{fig:nerf}) and are used in almost all modern neural network-based 3D reconstruction models.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/nerf.jpg}
+    \caption{NeRF - 100 input views to NeRF representation  \autocite{mildenhall_nerf_2021}}
+    \label{fig:nerf}
+\end{figure}
 
 \section{Models}
 
@@ -109,12 +172,12 @@ The Pixel2Mesh model works in the following steps:
 \subsection{Pixel2Mesh++}
 Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} is an extension of the original Pixel2Mesh model. It improves the performance by incorporating a Generative Adversarial Network (GAN) like approach.
 
-\subsubsection{One-2-3-45}
+\subsection{One-2-3-45}
 This model was developed by \textcite{liu_one-2-3-45_2023-1}...
 
-\subsubsection{Zero-1-to-3}
+\subsection{Zero-1-to-3}
 Zero-1-to-3 is a model developed by \textcite{liu_zero-1--3_2023}...
-\subsubsection{TripoSR}
+\subsection{TripoSR}
 TripoSR is a model developed by \textcite{tochilkin_triposr_2024}...
 
 \subsection{Comparison}
@@ -134,6 +197,15 @@ This could be especially beneficial for indie developers or small studios that d
 \end{figure}
 
 \subsection{Medical}
+\textcite{wang_instantiation-net_2019} have shown that 3D mesh reconstruction can be used in the medical field to generate 3D models of organs from medical images. These models can be used for diagnosis, treatment planning, and medical education. For example, 3D models of the heart can be used to plan surgeries and visualize complex anatomical structures.
+
+Diagnosing based on the 3D model also comes with risks and can potentially be problematic. The model is only an estimation based on training data ant not a real representation of the patient's anatomy.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/medical.jpg}
+    \caption{Medical Image Pipeline of Instantiation-Net \autocite{wang_instantiation-net_2019}.}
+    \label{fig:medical}
+\end{figure}
 
 \subsection{Other Applications}
 
