@@ -119,10 +119,10 @@ Generative Adversarial Networks (GAN) \autocite{goodfellow_generative_2014} are 
 \paragraph{}
 In the context of 3D mesh reconstruction, CNNs and GANs are often used together to generate 3D models from 2D images. The CNN is used to extract features from the input image, and the GAN is used to generate the 3D model from these features. One example of this is the Pixel2Mesh++ model by \textcite{wen_pixel2mesh_2019}.
 
-\subsection{Neural Implicit Functions}
+\subsection{Neural Implicit Functions} \label{section:nif}
 Neural Implicit Functions represent an alternative approach to 3D reconstruction by using neural networks to model continuous volumetric functions. Unlike traditional methods that use explicit representations like meshes or voxels, neural implicit functions encode the geometry of 3D objects in a continuous function that can be evaluated at any point in 3D space.
 
-Neural implicit functions, such as DeepSDF \autocite{park_deepsdf_2019} and NeRF \autocite{mildenhall_nerf_2021}, use neural networks to map spatial coordinates to implicit representations of 3D shapes. These models learn a function that outputs a value indicating whether a point lies inside or outside the object (in the case of signed distance functions) or the density and color at a given spatial location (in the case of radiance fields).
+Neural Implicit Functions, such as DeepSDF \autocite{park_deepsdf_2019} and NeRF \autocite{mildenhall_nerf_2021}, use neural networks to map spatial coordinates to implicit representations of 3D shapes. These models learn a function that outputs a value indicating whether a point lies inside or outside the object (in the case of signed distance functions — DeepSDF) or the density and color at a given spatial location (in the case of radiance fields — NeRF).
 
 \paragraph{}
 Neural Implicit Functions usually work in the following steps:
@@ -170,18 +170,52 @@ The Pixel2Mesh model works in the following steps:
 \end{figure}
 
 \subsection{Pixel2Mesh++}
-Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} is an extension of the original Pixel2Mesh model. It improves the performance by incorporating a Generative Adversarial Network (GAN) like approach.
+Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} is an adaption of the original Pixel2Mesh model.  Instead of using a single image, it relies on multiple images to generate a more accurate 3D model.
+It mixes the already well-known MVS systems with the Pixel2Mesh model.
+
+Pixel2Mesh++ operates by sampling deformation around each vertex of the base mesh and selecting the optimal deformation using perceptual features pooled from multiple input images. This multi-view approach enables the model to capture more detailed and accurate geometries, especially in occluded or less visible areas, where single-view methods cannot capture the full extent of an object and need to estimate the shape by hallucinating the missing parts — hence this model is included in this overview.
+
+\subsection{Zero-1-to-3} \label{section:zero123}
+The Zero-1-to-3 (Zero123) model, developed by \textcite{liu_zero-1--3_2023}, is designed to generate 3D models from a single image in a zero-shot manner, meaning it can produce accurate 3D reconstructions without needing extensive per-object training. Compared to Pixel2Mesh, this model created not just the mesh, but also a colored texture based on the given image. This model highlights its robustness and versatility across various types of input images.
+
+The process involves fine-tuning a pre-trained diffusion model, in this case Stable Diffusion, to learn how to control camera extrinsics (the external parameters defining the camera's position and orientation).
+By using a 3D model dataset, the model learns to manipulate the camera viewpoint. This allows it to create views from certain angles — also called novel view synthesis.
+
+By merging the input image with the synthesized views, the model can effectively learn the 3D structure of the object and generate a high-quality 3D mesh.
+
+The retrained version, Zero123-XL, further improves the performance by incorporating additional training data. Zero-1-to-3-XL makes use of the extensive dataset Objaverse-XL \autocite{deitke_objaverse-xl_2023}, which contains over 10 million 3D objects.
+This larger dataset allows the model to learn even more comprehensive geometric and semantic priors, enhancing its zero-shot capabilities and overall reconstruction accuracy.
 
 \subsection{One-2-3-45}
-This model was developed by \textcite{liu_one-2-3-45_2023-1}...
+One-2-3-45, developed by \textcite{liu_one-2-3-45_2023}, is a state-of-the-art model designed to generate 3D meshes from single 2D images with exceptional efficiency.
 
-\subsection{Zero-1-to-3}
-Zero-1-to-3 is a model developed by \textcite{liu_zero-1--3_2023}...
+It can reconstruct a full 360-degree 3D textured mesh in just 45 seconds, significantly faster than other models, which often require lengthy optimization processes. This rapid processing is achieved without the need for per-shape optimization, making it far more suitable for real-time consumer applications.
+One-2-3-45 uses the aforementioned Zero123 (\ref{section:zero123}) model to generate multi-view images from the input image. These images are then compared to the input image for pose estimation. The results are poses for each of the generated views.
+These results are lastly fed into a signed distance function based neural surface reconstruction model (similar to DeepSDF mentioned in \ref{section:nif}) which generated the finished 3D mesh.
+
+
 \subsection{TripoSR}
-TripoSR is a model developed by \textcite{tochilkin_triposr_2024}...
+TripoSR, developed by \textcite{tochilkin_triposr_2024}, is an another model for fast 3D object reconstruction from a single image. Building upon the Large Reconstruction Model (LRM) architecture by \textcite{hong_lrm_2024}, TripoSR uses transformer technology for feed-forward 3D generation, producing high-quality 3D meshes in under 0.5 seconds.
+
+The LRM architecture consists of three main parts: an image encoder, a triplane representation, and a NeRF decoder. The image encoder, based on a vision transformer, takes an input image and converts it into a set of detailed features called latent vectors. These latent vectors capture important information about the object's shape and appearance in a compressed form.
+
+Next, the triplane representation takes these latent vectors and arranges them in a three-dimensional grid. This grid captures the object's complex shapes and textures. The triplane representation uses layers that help the model focus on different parts of the image and learn how they relate to each other.
+
+Finally, the NeRF decoder takes the 3D grid and predicts the color and density of each point in space, creating a smooth and detailed 3D model of the object.
+
+TripoSR introduces several key improvements to this architecture. For example, it uses only a hand-selected higher quality subset of the Objaverse dataset, which improves generalization and reconstruction quality. It also introduces a mask loss function that penalizes differences between predicted and ground-truth mask images, reducing artifacts and improving reconstruction fidelity.
 
 \subsection{Comparison}
-Result comparison between models both visually and in terms of performance.
+
+Concept:
+Compared to other models like One-2-3-45 and Zero-1-to-3, TripoSR excels in both speed and performance, as evidenced by lower Chamfer Distance (CD) and higher F-score (FS) metrics on benchmark datasets.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/comparison_tripo.jpg}
+    \caption{Comparison of TripoSR to other state-of-the-art methods — including One-2-3-45 \autocite{tochilkin_triposr_2024}}
+    \label{fig:comparison-tripo}
+\end{figure*}
 
 \section{Applications of 3D Mesh Reconstruction}
 As the field is still relatively new, no mainstream applications have been established yet. However, the potential is great and some possible applications have already been identified.
