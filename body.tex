@@ -15,12 +15,11 @@ However, creating these models is a time-consuming and costly process that requi
 
 While the generated models are currently not yet at the level required for Triple-A games or the high standards of the entertainment industry, it holds significant potential for transforming and partially automating the creation and use of 3D models. At present, these technologies are more suitable for smaller prototyping projects or indie productions.
 
-Some examples of 3D mesh reconstruction include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}), One-2-3-45 (\textcite{liu_one-2-3-45_2023}), and One-2-3-45++ (\textcite{liu_one-2-3-45_2024}).
+Some examples of 3D mesh reconstruction include the newly released TripoSR (\textcite{tochilkin_triposr_2024}) as well as established models like Zero-1-to-3 (\textcite{liu_zero-1--3_2023}) and One-2-3-45 (\textcite{liu_one-2-3-45_2023}).
 
-This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance and visual results.
-Furthermore, it discusses the different strategies like voxel-based \autocite{zhirong_wu_3d_2015}, point cloud-based \autocite{charles_pointnet_2017}, and mesh-based \autocite{wang_pixel2mesh_2018} methods.
+This paper provides an overview of the various approaches and models used for 3D mesh reconstruction, including a comparison of their performance, visual results and training based on 3D-model datasets such as Objaverse-XL \autocite{deitke_objaverse-xl_2023}.
 It also explores the underlying methods and concepts like convolutional neural networks and neural radiance fields \autocite{mildenhall_nerf_2021} used in modern neural network-based models.
-Finally, it offers a brief look at use cases and applications that benefit the most as well as 3D-model datasets such as Objaverse-XL \autocite{deitke_objaverse-xl_2023} and their impact on model training.
+Finally, it offers a brief look at use cases and applications that benefit the most.
 % \section{System Overview}
 % Provide a high level overview of your system, approach, etc.
 % Describe features, user interfaces, provide screenshots.
@@ -165,28 +164,35 @@ The Pixel2Mesh model works in the following steps:
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/pixel2mesh.jpg}
-    \caption{Pixel2Mesh Pipeline \autocite{horn_shape_1989}}
+    \caption{Pixel2Mesh Pipeline \autocite{wang_pixel2mesh_2018}}
     \label{fig:pixel2mesh}
 \end{figure}
 
-\subsection{Pixel2Mesh++}
+\subsection{Pixel2Mesh++} \label{section:pixel2meshpp}
 Pixel2Mesh++ \autocite{wen_pixel2mesh_2019} is an adaption of the original Pixel2Mesh model.  Instead of using a single image, it relies on multiple images to generate a more accurate 3D model.
 It mixes the already well-known MVS systems with the Pixel2Mesh model.
 
 Pixel2Mesh++ operates by sampling deformation around each vertex of the base mesh and selecting the optimal deformation using perceptual features pooled from multiple input images. This multi-view approach enables the model to capture more detailed and accurate geometries, especially in occluded or less visible areas, where single-view methods cannot capture the full extent of an object and need to estimate the shape by hallucinating the missing parts — hence this model is included in this overview.
 
 \subsection{Zero-1-to-3} \label{section:zero123}
-The Zero-1-to-3 (Zero123) model, developed by \textcite{liu_zero-1--3_2023}, is designed to generate 3D models from a single image in a zero-shot manner, meaning it can produce accurate 3D reconstructions without needing extensive per-object training. Compared to Pixel2Mesh, this model created not just the mesh, but also a colored texture based on the given image. This model highlights its robustness and versatility across various types of input images.
+The Zero-1-to-3 (Zero123) model, developed by \textcite{liu_zero-1--3_2023}, is designed to generate 3D models from a single image in a zero-shot manner, meaning it can produce accurate 3D reconstructions without needing extensive per-object training. Compared to Pixel2Mesh, this model creates not just the mesh, but also a colored texture based on the given image. This model highlights its robustness and versatility across various types of input images.
 
 The process involves fine-tuning a pre-trained diffusion model, in this case Stable Diffusion, to learn how to control camera extrinsics (the external parameters defining the camera's position and orientation).
-By using a 3D model dataset, the model learns to manipulate the camera viewpoint. This allows it to create views from certain angles — also called novel view synthesis.
+By using a 3D model dataset, the model learns to manipulate the camera viewpoint. This allows it to create views from certain angles — also called novel view synthesis which can be observed in Figure \ref{fig:zero-1-to-3}.
 
 By merging the input image with the synthesized views, the model can effectively learn the 3D structure of the object and generate a high-quality 3D mesh.
 
 The retrained version, Zero123-XL, further improves the performance by including additional training data. Zero-1-to-3-XL makes use of the extensive dataset Objaverse-XL \autocite{deitke_objaverse-xl_2023}, which contains over 10 million 3D objects.
 This larger dataset allows the model to enhance its zero-shot capabilities and overall reconstruction accuracy.
 
-\subsection{One-2-3-45}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/zero-1-to-3.jpg}
+    \caption{3D reconstruction with Zero-1-to-3 \autocite{liu_zero-1--3_2023}. The model receives the base image as well as the view parameters \(R\) (Rotation) and \(T\) (Transform) as input.}
+    \label{fig:zero-1-to-3}
+\end{figure}
+
+\subsection{One-2-3-45} \label{section:one-2-3-45}
 One-2-3-45, developed by \textcite{liu_one-2-3-45_2023}, is a state-of-the-art model designed to generate 3D meshes from single 2D images with exceptional efficiency.
 
 It can reconstruct a full 360-degree 3D textured mesh in just 45 seconds, significantly faster than other models, which often require lengthy optimization processes. This rapid processing is achieved without the need for per-shape optimization, making it far more suitable for real-time consumer applications.
@@ -196,7 +202,14 @@ These results are lastly fed into a signed distance function based neural surfac
 An improved version, One-2-3-45++ \autocite{liu_one-2-3-45_2024}, was later released, which further optimized the model's performance.
 The biggest improvement was the switch from Zero123 to a custom 2D diffusion model. Zero123 tried to predict each view individually, which resulted in inconsistencies. The new model uses a fine-tuned 2D diffusion model, which can attend all views simultaneously, resulting in more accurate results.
 
-\subsection{TripoSR}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/one-2-3-45++_demo.jpg}
+    \caption{Models generated by One-2-3-45++ \autocite{liu_one-2-3-45_2024}}
+    \label{fig:one-2-3-4-5-plus-plus-demo}
+\end{figure}
+
+\subsection{TripoSR} \label{section:triposr}
 TripoSR, developed by \textcite{tochilkin_triposr_2024}, is an another model for fast 3D object reconstruction from a single image.
 It was created as a group effort by Stability AI (the creators of Stable Diffusion) as well as Tripo AI.
 Building upon the Large Reconstruction Model (LRM) architecture by \textcite{hong_lrm_2024}, TripoSR uses transformer technology for feed-forward 3D generation, producing high-quality 3D meshes in under 0.5 seconds.
@@ -211,6 +224,13 @@ TripoSR introduces several key improvements to this architecture. For example, i
 
 \subsection{Comparison}
 
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/comparison_tripo.jpg}
+    \caption{Comparison of TripoSR to other state-of-the-art methods — including One-2-3-45 \autocite{tochilkin_triposr_2024}}
+    \label{fig:comparison-tripo}
+\end{figure*}
+
 \subsubsection{Model Training}
 Most models are trained on a 3D model dataset. A recent dataset, Objaverse-XL \autocite{deitke_objaverse-xl_2023} contains over 10 million 3D objects and is used by models like Zero123-XL to improve their zero-shot capabilities.
 The term zero-shot in machine learning refers to the ability of a model to handle elements it has never seen before.
@@ -220,34 +240,38 @@ In the case of Objaverse-XL, most models are sourced from open-source GitHub rep
 
 \subsubsection{Model Performance}
 Based on the order of the models listed above, each models reconstruction accuracy increases compared to the previous one.
-Hence TripoSR, the newest model, is the most accurate and efficient model.
+Hence TripoSR (\ref{section:triposr}), the newest model, is the most accurate and efficient model.
 
-Compared to other models like One-2-3-45 and Zero-1-to-3, TripoSR excels in both speed and performance, as evidenced by lower Chamfer Distance (CD) and higher F-score (FS) metrics on benchmark datasets.
+Comparing models quantitatively can be done using metrics like Chamfer Distance (CD) and F-score (FS). The Chamfer Distance measures the average distance between points on the generated and ground-truth meshes, while the F-score, the harmonic mean of precision and recall, measures the overlap between the two meshes.
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/comparison_tripo.jpg}
-    \caption{Comparison of TripoSR to other state-of-the-art methods — including One-2-3-45 \autocite{tochilkin_triposr_2024}}
-    \label{fig:comparison-tripo}
-\end{figure*}
+Compared to other models like One-2-3-45 (\ref{section:one-2-3-45}) and LRM, TripoSR is better in both speed and performance, as indicated by lower Chamfer Distance (CD \(\downarrow\)) and higher F-score (FS \(\uparrow\)) metrics on benchmark datasets. The scores of TripoSR are \(0.111\) and \(0.651\) respectively, while One-2-3-45 has scores of \(0.227\) and \(0.382\).
+According to these values, TripoSR is about twice as accurate as One-2-3-45.
 
-\section{Applications of 3D Mesh Reconstruction}
-As the field is still relatively new, no mainstream applications have been established yet. However, the potential is great and some possible applications have already been identified.
+These metrics can also be visually proven by comparing the generated models side by side (see Figure \ref{fig:comparison-tripo}).
+
+\subsubsection{Model Complexity}
+Due to the lack of performance testing in this paper, all mentioned results are based on the respective papers.
+
+As already mentioned, TripoSR (\ref{section:triposr}) is by far the fastest model, generating high-quality 3D models in under 0.5 seconds.
+TripoSR is therefore about 10 times faster than LRM, the model it is based on, which takes about 5 seconds to generate a 3D object with less accuracy.
+This is still significantly faster than for example One-2-3-45++ (\ref{section:one-2-3-45}), which takes about 60 seconds to generate a 3D object.
+
+The other models compared did not provide exact time measurements.
+
+All these measurements were taken using A100 GPUs, which are the state of the art in terms of AI performance with 80 GB of memory.
+
+These graphics cards were also used in the training of these models. LRM was trained on 128 of these GPUs for 3 days.
+A total of about 9000 hours at an energy consumption of 250 watts which results in 2.3 MWh. This might sound like a lot but when comparing to other AI models it's almost nothing.
+The Large Language Model Llama \autocite{touvron_llama_2023} for example used 2048 of the A100 GPUs for 5 months, resulting in an about a thousand times higher energy usage of 1.8 GWh.
+
+\section{Possible Applications}
+As the field is still relatively new, no mainstream applications have been established yet. However, the potential is great, and some possible applications have already been identified.
 
 \subsection{Development and Entertainment}
-The most prominent application of 3D mesh reconstruction could be in the development and entertainment industry. The ability to generate 3D models from 2D images could revolutionize the asset creation process.
-This could be especially beneficial for indie developers or small studios that do not have the resources to create high-quality 3D models from scratch. The generated models could be used in video games, movies, animations, and other forms of media. This could significantly reduce the time and cost associated with creating 3D assets, allowing developers and animators to focus on other aspects of their projects. (see Figure \ref{fig:one-2-3-4-5-plus-plus-demo})
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{images/one-2-3-45++_demo.jpg}
-    \caption{Models generated by One-2-3-45++ \autocite{liu_one-2-3-45_2024}}
-    \label{fig:one-2-3-4-5-plus-plus-demo}
-\end{figure}
+The most prominent application of 3D mesh reconstruction can be seen in the development and entertainment industry. The ability to generate 3D models from 2D images could revolutionize the asset creation process.
+This would be especially beneficial for indie developers or small studios that do not have the resources to create high-quality 3D models from scratch. The generated models could be used in video games, movies, animations, and other forms of media. This significantly reduces the time and costs associated with creating 3D assets, allowing developers and animators to focus on other aspects of their projects. (see Figure \ref{fig:one-2-3-4-5-plus-plus-demo})
 
 \subsection{Medical}
-\textcite{wang_instantiation-net_2019} have shown that 3D mesh reconstruction can be used in the medical field to generate 3D models of organs from medical images. These models can be used for diagnosis, treatment planning, and medical education. For example, 3D models of the heart can be used to plan surgeries and visualize complex anatomical structures.
-
-Diagnosing based on the 3D model also comes with risks and can potentially be problematic. The model is only an estimation based on training data ant not a real representation of the patient's anatomy.
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{images/medical.jpg}
@@ -255,9 +279,13 @@ Diagnosing based on the 3D model also comes with risks and can potentially be pr
     \label{fig:medical}
 \end{figure}
 
-\subsection{Other Applications}
+With Instantiation-Net, \textcite{wang_instantiation-net_2019} have shown that 3D mesh reconstruction can be used in the medical field to generate 3D models of organs from medical images. The whole pipeline can be seen in Figure \ref{fig:medical}. These models can be used for diagnosis, treatment planning, and medical education. For example, 3D models of the heart can be used to plan surgeries and visualize complex anatomical structures.
 
-\subsubsection{Cultural Heritage}
+Diagnosing based on the 3D model also comes with risks and can potentially be problematic. The model is only an estimation based on training data and not a real representation of the patient's anatomy.
+
+\subsection{Other Applications}
+In the future 3D mesh reconstruction could also be used in fields like architecture, archaeology, cultural heritage, and many more.
+There have just not yet been any significant uses of the technology in these fields. And it might also be necessary to adapt the models to the specific requirements of these fields.
 
 % \section{Ethical Implications}
 % Even though all the advancements in the field of 3D mesh reconstruction are promising, they also raise quite a few concerns.
@@ -281,11 +309,19 @@ Diagnosing based on the 3D model also comes with risks and can potentially be pr
 
 % Describe your methodology. How did you evaluate your work? Why did you choose this methodology? Present results of your evaluation here.
 
-\section{Discussion and Future Direction}
-Discussion of results and their implications. What are the limitations current works? What are the next steps in this research area?
 % Discuss your results to answer your research question. Does your data support you hypotheses? Put your results into perspective by situating it in the research field/related work.
 
-\section{Conclusion}
+\section{Conclusion and Future Direction}
+Of all the models discussed, the most recent TripoSR model is the best in terms of accuracy and efficiency in almost any scenario.
+
+Even though models are generating quite accurate 3D models, when given the right input images there is still room for improvement, especially with real world objects.
+
+One aspect none of the mentioned models can handle are images with background. So at the moment, another model or manual intervention is necessary to remove the background from the image.
+
+All mentioned models also assume Lambertian surfaces for the sake of simplicity, so the resulting models do not reconstruct shiny or metallic surfaces accurately.
+
+The biggest roadblock of this technology is still clearly the fact, that there is just no way to see the backside of an object from the single taken image. Hence the estimated areas sometimes appear inaccurate or blurry.
+
 % Summarize your work, outline limitations and future work.
 
 % \section{Formatierung}
